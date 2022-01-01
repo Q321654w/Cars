@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\PC\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\PC\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Cars.1505742276.00" t="ExcludeRecursive" />
+    <e p="C:\Users\PC\AppData\Roaming\JetBrains\Rider2020.1\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\PC\Desktop\Projects\Cars" t="IncludeRecursive">
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Features" t="Include">
+          <e p="CarPositionMarker.cs" t="Include" />
+          <e p="Cars" t="Include">
+            <e p="Car.cs" t="Include" />
+            <e p="CarConfig.cs" t="Include" />
+            <e p="CarFactories" t="Include">
+              <e p="CarFactory.cs" t="Include" />
+            </e>
+            <e p="Engines" t="Include">
+              <e p="Configs" t="Include">
+                <e p="EngineConfig.cs" t="Include" />
+              </e>
+              <e p="Engine.cs" t="Include" />
+              <e p="EngineFactory.cs" t="Include" />
+              <e p="Stats" t="Include">
+                <e p="EngineStats.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Driver.cs" t="Include" />
+          <e p="GameInstaller.cs" t="Include" />
+          <e p="GameUpdate" t="Include">
+            <e p="GameUpdates.cs" t="Include" />
+            <e p="IGameUpdate.cs" t="Include" />
+          </e>
+          <e p="IDirectionProviders" t="Include">
+            <e p="IDirectionProvider.cs" t="Include" />
+            <e p="KeyboardDirectionProvider.cs" t="Include" />
+            <e p="PathDirectionProvider.cs" t="Include" />
+          </e>
+          <e p="Level.cs" t="Include" />
+          <e p="LevelConfig.cs" t="Include" />
+          <e p="Maps" t="Include">
+            <e p="Finish.cs" t="Include" />
+            <e p="Map.cs" t="Include" />
+          </e>
+          <e p="ScoreBoard.cs" t="Include" />
+          <e p="Test.cs" t="Include" />
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="PathCreator" t="Include">
+            <e p="Core" t="Include">
+              <e p="Editor" t="Include">
+                <e p="Helper" t="Include">
+                  <e p="MouseUtility.cs" t="Include" />
+                  <e p="PathHandle.cs" t="Include" />
+                  <e p="ScreenSpacePolyLine.cs" t="Include" />
+                </e>
+                <e p="PathCreatorEditor.asmdef" t="Include" />
+                <e p="PathEditor.cs" t="Include" />
+              </e>
+              <e p="Runtime" t="Include">
+                <e p="Objects" t="Include">
+                  <e p="BezierPath.cs" t="Include" />
+                  <e p="EndOfPathInstruction.cs" t="Include" />
+                  <e p="GlobalDisplaySettings.cs" t="Include" />
+                  <e p="MinMax3D.cs" t="Include" />
+                  <e p="PathCreator.cs" t="Include" />
+                  <e p="PathCreatorData.cs" t="Include" />
+                  <e p="PathSpace.cs" t="Include" />
+                  <e p="VertexPath.cs" t="Include" />
+                </e>
+                <e p="PathCreator.asmdef" t="Include" />
+                <e p="Utility" t="Include">
+                  <e p="CubicBezierUtility.cs" t="Include" />
+                  <e p="MathUtility.cs" t="Include" />
+                  <e p="VertexPathUtility.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Examples" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="PathFollower.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Cars.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="PathCreator.csproj" t="IncludeRecursive" />
+      <e p="PathCreatorEditor.csproj" t="IncludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
