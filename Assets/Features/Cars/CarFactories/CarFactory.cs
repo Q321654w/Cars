@@ -23,9 +23,9 @@ namespace Features.Cars.CarBuilders
         {
             var config = _configs.Single(s => s.Id == id);
             var instance = Object.Instantiate(config.CarPrefab);
-            var engine = _engineFactory.Create(config.EngineId);
-            var directionProvider = _directionProviderFactory.Create(config.DirectionProviderId, instance.transform);
-            instance.Initialize(directionProvider, engine);
+            var rigidbody = instance.GetComponent<Rigidbody>();
+            var engine = _engineFactory.Create(config.EngineId, rigidbody);
+            instance.Initialize(engine);
             return instance;
         }
     }

@@ -8,11 +8,12 @@ namespace Features.Cars.Engines
     public class EngineFactory : ScriptableObject
     {
         [SerializeField] private EngineConfig[] _configs;
-        
-        public Engine Create(string id)
+
+        public Engine Create(string id, Rigidbody rigidbody)
         {
             var config = _configs.Single(s => s.Id == id);
-            return new Engine(config.Stats);
+            
+            return new Engine(config.Stats, rigidbody, );
         }
     }
 }

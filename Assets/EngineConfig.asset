@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EngineConfig
   m_EditorClassIdentifier: 
   _stats:
-    _accelerationSpeed: 1000
-    _brakingSpeed: 1000
-    _turningSpeed: 30
+    _accelerationSpeed: 300
+    _brakingSpeed: 300
+    _turningSpeed: 100
   _id: 1
