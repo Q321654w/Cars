@@ -16,6 +16,7 @@
             <e p="CarConfig.cs" t="Include" />
             <e p="CarFactories" t="Include">
               <e p="CarFactory.cs" t="Include" />
+              <e p="PathProviderFactory.cs" t="Include" />
             </e>
             <e p="Engines" t="Include">
               <e p="Configs" t="Include">
@@ -45,7 +46,6 @@
             <e p="Finish.cs" t="Include" />
             <e p="Map.cs" t="Include" />
           </e>
-          <e p="ScoreBoard.cs" t="Include" />
           <e p="Test.cs" t="Include" />
         </e>
         <e p="Plugins" t="Include">

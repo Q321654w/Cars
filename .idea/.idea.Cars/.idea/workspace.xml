@@ -2,21 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a1edb62-d717-4520-924d-0a6499d71bf5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/CarCollection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/CarCollection.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/PathProviderFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/DirectionProviderFactoryFacade.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/DirectionProviderFactoryFacade.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/IDirectionProviderFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Features/IDirectionProviderFactory.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EngineConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EngineConfig.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Cars/Car.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Cars/Car.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/CarFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/CarFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Cars/Engines/Engine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Cars/Engines/Engine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Cars/Engines/EngineFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Cars/Engines/EngineFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Level.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Level.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/ScoreBoard.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/ScoreBoard.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Features/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Test.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe6.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe6.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe7.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe7.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +42,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Features/LevelConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/Cars/Engines/Engine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/Maps/Map.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Features/IDirectionProviderFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Runtime/Objects/EndOfPathInstruction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Features/Cars/CarFactories/PathProviderFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/Cars/Engines/Configs/EngineConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Runtime/Objects/PathCreatorData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/IDirectionProviders/KeyboardDirectionProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -41,6 +53,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Runtime/Utility/VertexPathUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/Cars/Car.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Runtime/Utility/MathUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Features/CarCollection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/Cars/Engines/Stats/EngineStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/Maps/Finish.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/Driver.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,9 +68,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Editor/Helper/PathHandle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/GameUpdate/GameUpdates.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/IDirectionProviders/IDirectionProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Features/ScoreBoard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/GameUpdate/IGameUpdate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Editor/Helper/ScreenSpacePolyLine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Features/DirectionProviderFactoryFacade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Examples/Scripts/PathFollower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Runtime/Objects/MinMax3D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/IDirectionProviders/PathDirectionProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,9 +101,7 @@
         <option value="$PROJECT_DIR$/Assets/Features/CarPositionMarker.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/Maps/Map.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/GameUpdate/GameUpdates.cs" />
-        <option value="$PROJECT_DIR$/Assets/Features/Level.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/Cars/CarBuilders/CarFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Features/Test.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/IDirectionProviders/IDirectionProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/IDirectionProviders/KeyboardDirectionProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/DebugDrawer.cs" />
@@ -99,7 +110,14 @@
         <option value="$PROJECT_DIR$/Assets/Features/Cars/Engines/Engine.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/Cars/Engines/EngineFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/Cars/Car.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/DirectionProviderFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/CarCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/IDirectionProviderFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/PathProviderFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/DirectionProviderFactoryFacade.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/CarFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/Level.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/Test.cs" />
       </list>
     </option>
   </component>

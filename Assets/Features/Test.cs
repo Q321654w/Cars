@@ -16,15 +16,17 @@ namespace Features
         [SerializeField] private EngineFactory _engineFactory;
         [SerializeField] private CarConfig[] _configs;
         [SerializeField] private string _carId;
-
+        
         private void Start()
         {
-            var playerBuilder = new CarFactory(_configs,_engineFactory,new DirectionProviderFactory(_map.VertexPath));
-            var player = playerBuilder.Create(_carId);
+            var directionProviderFactory = new PathProviderFactory(_map.VertexPath);
+            var carFactory = new CarFactory(_configs, _engineFactory, directionProviderFactory);
+
+            var player = carFactory.Create(_carId);
             var cars = new List<Car>() {player};
-            var scoreBoard = new ScoreBoard(1);
-            var level = new Level(_map, _winLoopCount, scoreBoard, _updates);
+            var level = new Level(_map, _winLoopCount, cars, _updates);
             level.Start(cars);
         }
+        
     }
 }

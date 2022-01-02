@@ -11,15 +11,18 @@ namespace Features
         private readonly Map _map;
         private readonly Dictionary<Car, int> _loops;
         private readonly int _winLoopCount;
+        private readonly IEnumerable<Car> _cars;
+        
+        
+        private Queue<Car> _scoreBoard;
 
-        private readonly ScoreBoard _scoreBoard;
-
-        public Level(Map map, int winLoopCount, ScoreBoard scoreBoard, GameUpdates updates)
+        public Level(Map map, int winLoopCount, IEnumerable<Car> cars, GameUpdates updates)
         {
+            _scoreBoard = new Queue<Car>();
             _loops = new Dictionary<Car, int>();
             _map = map;
             _winLoopCount = winLoopCount;
-            _scoreBoard = scoreBoard;
+            _cars = cars;
             _updates = updates;
         }
         
@@ -42,7 +45,7 @@ namespace Features
         {
             if (_loops[car] >= _winLoopCount)
             {
-                _scoreBoard.AddCar(car);
+                _scoreBoard.Enqueue(car);
                 return;
             }
 

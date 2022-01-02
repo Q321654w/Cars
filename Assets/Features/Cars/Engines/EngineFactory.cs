@@ -9,11 +9,10 @@ namespace Features.Cars.Engines
     {
         [SerializeField] private EngineConfig[] _configs;
 
-        public Engine Create(string id, Rigidbody rigidbody)
+        public Engine Create(string id)
         {
             var config = _configs.Single(s => s.Id == id);
-            
-            return new Engine(config.Stats, rigidbody, );
+            return new Engine(config.Stats);
         }
     }
 }

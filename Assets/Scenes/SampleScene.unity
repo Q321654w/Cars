@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 582946809}
   - component: {fileID: 582946808}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,12 +454,15 @@ MonoBehaviour:
       points:
       - {x: -25.056644, y: 0, z: -0.12994385}
       - {x: -27.815952, y: 0, z: 8.295368}
-      - {x: -15.076927, y: 0, z: 29.254574}
+      - {x: -13.719746, y: 0, z: 74.11391}
       - {x: -7.9562454, y: 0, z: 29.28587}
-      - {x: -2.330916, y: 0, z: 29.310593}
-      - {x: -11.781466, y: 0, z: -4.707711}
-      - {x: 4.078491, y: 0, z: 3.8239975}
-      - {x: 9.365192, y: 0, z: 6.667927}
+      - {x: -6.4666452, y: 0, z: 17.699879}
+      - {x: -36.692524, y: 0, z: 44.935455}
+      - {x: -35.083946, y: 0, z: 54.477993}
+      - {x: -33.198177, y: 0, z: 65.66495}
+      - {x: -10.877281, y: 0, z: 89.49138}
+      - {x: -2.002983, y: 0, z: 78.496994}
+      - {x: 1.767499, y: 0, z: 73.82574}
       - {x: 17.133415, y: 0, z: 1.6756516}
       - {x: 6.5805435, y: 0, z: -6.025593}
       - {x: 2.0837922, y: 0, z: -9.307219}
@@ -477,6 +480,7 @@ MonoBehaviour:
       - 0
       - 0
       - 0
+      - 0
       globalNormalsAngle: 0
       flipNormals: 0
     vertexPathUpToDate: 1
@@ -487,7 +491,7 @@ MonoBehaviour:
     showPerSegmentBounds: 0
     displayAnchorPoints: 1
     displayControlPoints: 1
-    bezierHandleScale: 6.4
+    bezierHandleScale: 25.13
     globalDisplaySettingsFoldout: 0
     keepConstantHandleSize: 0
     showNormalsInVertexMode: 1
@@ -498,7 +502,7 @@ MonoBehaviour:
     showVertexPathOptions: 1
     showNormals: 0
     showNormalsHelpInfo: 0
-    tabIndex: 1
+    tabIndex: 0
   initialized: 1
 --- !u!4 &1105312570
 Transform:
