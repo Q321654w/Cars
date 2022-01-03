@@ -1,15 +1,18 @@
 ﻿using System.Linq;
 using Features.Cars.Engines.Configs;
-using UnityEngine;
 
 namespace Features.Cars.Engines
 {
-    [CreateAssetMenu(menuName = "EngineFactory")]
-    public class EngineFactory : ScriptableObject
+    public class EngineFactory 
     {
-        [SerializeField] private EngineConfig[] _configs;
+        private readonly EngineConfig[] _configs;
 
-        public Engine Create(string id)
+        public EngineFactory(EngineConfig[] configs)
+        {
+            _configs = configs;
+        }
+
+        public Engine Create(int id)
         {
             var config = _configs.Single(s => s.Id == id);
             return new Engine(config.Stats);

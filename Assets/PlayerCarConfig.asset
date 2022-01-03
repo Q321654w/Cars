@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48b9664ceda7480fbb68b2d7115f5277, type: 3}
-  m_Name: New Engine Factory
+  m_Script: {fileID: 11500000, guid: daf0bc63c6374ec28c474b9bb561b98e, type: 3}
+  m_Name: PlayerCarConfig
   m_EditorClassIdentifier: 
-  _configs:
-  - {fileID: 11400000, guid: 1620c6349cc21004ea792e82962c5c3a, type: 2}
+  _carPrefab: {fileID: 381061287189774955, guid: 786ca6ef45efb0649954c389ef4b3b37, type: 3}
+  _id: 1
+  _engineId: 0
+  _directionProviderId: Player

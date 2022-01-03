@@ -2,7 +2,7 @@
 
 namespace Features.IDirectionProviders
 {
-    public class KeyboardDirectionProvider : IDirectionProvider
+    public class KeyboardDirectionProvider
     {
         public Vector3 GetDirection()
         {

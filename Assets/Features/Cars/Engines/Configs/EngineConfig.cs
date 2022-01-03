@@ -7,9 +7,9 @@ namespace Features.Cars.Engines.Configs
     public class EngineConfig : ScriptableObject
     {
         [SerializeField] private EngineStats _stats;
-        [SerializeField] private string _id;
+        [SerializeField] private int _id;
 
         public EngineStats Stats => _stats;
-        public string Id => _id;
+        public int Id => _id;
     }
 }

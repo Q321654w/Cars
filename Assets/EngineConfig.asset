@@ -16,4 +16,4 @@ MonoBehaviour:
     _accelerationSpeed: 300
     _brakingSpeed: 300
     _turningSpeed: 100
-  _id: 1
+  _id: 0

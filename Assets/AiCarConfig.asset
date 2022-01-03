@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: daf0bc63c6374ec28c474b9bb561b98e, type: 3}
-  m_Name: CarConfig
+  m_Name: AiCarConfig
   m_EditorClassIdentifier: 
-  _carPrefab: {fileID: 6508426783774296475, guid: 78e02d6bcc337a64986d21265144032e, type: 3}
-  _id: 1
-  _engineId: 1
-  _directionProviderId: 1
+  _carPrefab: {fileID: 2872029069503673704, guid: 1f2a503422b757347ab11c735c169a5b, type: 3}
+  _id: 0
+  _engineId: 0
+  _directionProviderId: Ai

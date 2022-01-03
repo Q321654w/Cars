@@ -9,7 +9,7 @@ namespace Features.Maps
     {
         public event Action<Car> Reached;
 
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.TryGetComponent<Car>(out var car))
             {

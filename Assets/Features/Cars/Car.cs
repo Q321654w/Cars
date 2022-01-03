@@ -6,28 +6,28 @@ namespace Features.Cars
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(BoxCollider))]
-    public class Car : MonoBehaviour, IGameUpdate
+    public abstract class Car : MonoBehaviour, IGameUpdate
     {
-        private IDirectionProvider _directionProvider;
         private Engine _engine;
-        private Rigidbody _rigidbody;
+        protected Rigidbody Rigidbody;
 
         private void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody>();
+            Rigidbody = GetComponent<Rigidbody>();
         }
 
-        public void Initialize(Engine engine, IDirectionProvider directionProvider)
+        public void Initialize(Engine engine)
         {
-            _directionProvider = directionProvider;
             _engine = engine;
         }
 
         public void GameUpdate(float deltaTime)
         {
-            var direction = _directionProvider.GetDirection();
-            _engine.Move(deltaTime, direction, _rigidbody);
-            _engine.Rotate(deltaTime, direction, _rigidbody);
+            var direction = GetDirection();
+            _engine.Move(deltaTime, direction, Rigidbody);
+            _engine.Rotate(deltaTime, direction, Rigidbody);
         }
+
+        protected abstract Vector3 GetDirection();
     }
 }
