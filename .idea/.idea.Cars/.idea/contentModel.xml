@@ -12,13 +12,8 @@
         <e p="Features" t="Include">
           <e p="CarMarker.cs" t="Include" />
           <e p="Cars" t="Include">
-            <e p="Ais" t="Include">
-              <e p="Ai.cs" t="Include" />
-              <e p="AiConfig.cs" t="Include" />
-            </e>
             <e p="Car.cs" t="Include" />
             <e p="CarFactories" t="Include">
-              <e p="AiCarFactory.cs" t="Include" />
               <e p="CarConfig.cs" t="Include" />
             </e>
             <e p="Engines" t="Include">
@@ -31,9 +26,6 @@
                 <e p="EngineStats.cs" t="Include" />
               </e>
             </e>
-            <e p="Players" t="Include">
-              <e p="Player.cs" t="Include" />
-            </e>
           </e>
           <e p="Driver.cs" t="Include" />
           <e p="GameInstaller.cs" t="Include" />
@@ -42,11 +34,11 @@
             <e p="IGameUpdate.cs" t="Include" />
           </e>
           <e p="IDirectionProviders" t="Include">
+            <e p="IDirectionProvider.cs" t="Include" />
             <e p="KeyboardDirectionProvider.cs" t="Include" />
             <e p="PathDirectionProvider.cs" t="Include" />
           </e>
           <e p="Level.cs" t="Include" />
-          <e p="LevelBuilder.cs" t="Include" />
           <e p="LevelConfig.cs" t="Include" />
           <e p="Maps" t="Include">
             <e p="Finish.cs" t="Include" />

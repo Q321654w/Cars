@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a1edb62-d717-4520-924d-0a6499d71bf5" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/Assets/Features/Cars/Ais.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Features/Cars/Ais/Ai.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Features/Cars/Ais/Ai.cs.meta" afterDir="false" />
@@ -20,6 +21,12 @@
       <change beforePath="$PROJECT_DIR$/Assets/EngineConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EngineConfig.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/CarPositionMarker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/CarMarker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/CarPositionMarker.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/CarMarker.cs.meta" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cars/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EngineConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EngineConfig.asset" afterDir="false" />
+>>>>>>> parent of 2bcf09d (Delete UnusedClasses)
       <change beforePath="$PROJECT_DIR$/Assets/Features/Cars/Car.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Cars/Car.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Cars/CarConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/CarConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Cars/CarConfig.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/CarConfig.cs.meta" afterDir="false" />
@@ -29,6 +36,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/PathProviderFactory.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Cars/Engines/Configs/EngineConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Cars/Engines/Configs/EngineConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/Cars/Engines/EngineFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/Cars/Engines/EngineFactory.cs" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Assets/Features/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/GameInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/GameInstaller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Features/GameInstaller.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Features/IDirectionProviders/IDirectionProvider.cs" beforeDir="false" />
@@ -50,6 +58,15 @@
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe6.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe6.log" afterDir="false" />
+>>>>>>> parent of 2bcf09d (Delete UnusedClasses)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +83,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Features/Cars/CarFactories/AiCarFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/Cars/Engines/Engine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/Maps/Map.cs" root0="FORCE_HIGHLIGHTING" />
+<<<<<<< HEAD
     <setting file="file://$PROJECT_DIR$/Assets/Features/Cars/Ais/Ai.cs" root0="FORCE_HIGHLIGHTING" />
+=======
+>>>>>>> parent of 2bcf09d (Delete UnusedClasses)
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Runtime/Objects/EndOfPathInstruction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/Cars/Engines/Configs/EngineConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Runtime/Objects/PathCreatorData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -90,6 +110,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/DebugDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Editor/Helper/PathHandle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Features/GameUpdate/GameUpdates.cs" root0="FORCE_HIGHLIGHTING" />
+<<<<<<< HEAD
+=======
+    <setting file="file://$PROJECT_DIR$/Assets/Features/IDirectionProviders/IDirectionProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Features/ScoreBoard.cs" root0="FORCE_HIGHLIGHTING" />
+>>>>>>> parent of 2bcf09d (Delete UnusedClasses)
     <setting file="file://$PROJECT_DIR$/Assets/Features/GameUpdate/IGameUpdate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Core/Editor/Helper/ScreenSpacePolyLine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathCreator/Examples/Scripts/PathFollower.cs" root0="FORCE_HIGHLIGHTING" />
@@ -116,9 +141,17 @@
         <option value="$PROJECT_DIR$/Assets/Features/Cars/CarBuilders/ICarBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/Cars/CarBuilders/PlayerCarBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/GameUpdate/GameUpdates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/Level.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/Cars/CarBuilders/CarFactory.cs" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/Assets/Features/Test.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/IDirectionProviders/IDirectionProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/IDirectionProviders/KeyboardDirectionProvider.cs" />
+>>>>>>> parent of 2bcf09d (Delete UnusedClasses)
         <option value="$PROJECT_DIR$/Assets/DebugDrawer.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/Cars/Engines/Engine.cs" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Assets/Features/CarCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/IDirectionProviderFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/DirectionProviderFactoryFacade.cs" />
@@ -148,6 +181,11 @@
         <option value="$PROJECT_DIR$/Assets/Features/Cars/Ai.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/Cars/Ais/AiConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/AiCarFactory.cs" />
+=======
+        <option value="$PROJECT_DIR$/Assets/Features/Cars/Engines/EngineFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/Cars/Car.cs" />
+        <option value="$PROJECT_DIR$/Assets/Features/Cars/CarFactories/CarFactory.cs" />
+>>>>>>> parent of 2bcf09d (Delete UnusedClasses)
       </list>
     </option>
   </component>

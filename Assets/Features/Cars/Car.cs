@@ -1,15 +1,17 @@
 using Features.Cars.Engines;
 using Features.GameUpdate;
+using Features.IDirectionProviders;
 using UnityEngine;
 
 namespace Features.Cars
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(BoxCollider))]
-    public abstract class Car : MonoBehaviour, IGameUpdate
+    public class Car : MonoBehaviour, IGameUpdate
     {
         private Engine _engine;
         protected Rigidbody Rigidbody;
+        private IDirectionProvider _directionProvider;
 
         private void Awake()
         {
@@ -23,11 +25,9 @@ namespace Features.Cars
 
         public void GameUpdate(float deltaTime)
         {
-            var direction = GetDirection();
-            _engine.Move(deltaTime, direction, Rigidbody);
-            _engine.Rotate(deltaTime, direction, Rigidbody);
+            var direction = _directionProvider.GetDirection();
+            _engine.Move(deltaTime, direction);
+            _engine.Rotate(deltaTime, direction);
         }
-
-        protected abstract Vector3 GetDirection();
     }
 }
