@@ -4,19 +4,15 @@ using UnityEngine;
 
 namespace Features.Cars.Engines
 {
-    public class EngineFactory 
+    [CreateAssetMenu(menuName = "EngineFactory")]
+    public class EngineFactory : ScriptableObject
     {
-        private readonly EngineConfig[] _configs;
-        
-        public EngineFactory(EngineConfig[] configs)
-        {
-            _configs = configs;
-        }
-        
+        [SerializeField] private EngineConfig[] _configs;
+
         public Engine Create(int id, Rigidbody rigidbody)
         {
             var config = _configs.Single(s => s.Id == id);
-            return new Engine(config.Stats, rigidbody);
+            return new Engine(config.Stats, rigidbody,config.PidRegulator);
         }
     }
 }

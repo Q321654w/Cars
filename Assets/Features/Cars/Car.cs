@@ -1,6 +1,5 @@
 using Features.Cars.Engines;
 using Features.GameUpdate;
-using Features.IDirectionProviders;
 using UnityEngine;
 
 namespace Features.Cars
@@ -10,24 +9,30 @@ namespace Features.Cars
     public class Car : MonoBehaviour, IGameUpdate
     {
         private Engine _engine;
-        protected Rigidbody Rigidbody;
-        private IDirectionProvider _directionProvider;
-
-        private void Awake()
-        {
-            Rigidbody = GetComponent<Rigidbody>();
-        }
 
         public void Initialize(Engine engine)
         {
             _engine = engine;
         }
 
+        public void Accelerate()
+        {
+            _engine.Accelerate();
+        }
+
+        public void Slowdown()
+        {
+            _engine.Slowdown();
+        }
+
+        public void Rotate(float deltaTime, float direction)
+        {
+            _engine.Rotate(deltaTime, direction);
+        }
+
         public void GameUpdate(float deltaTime)
         {
-            var direction = _directionProvider.GetDirection();
-            _engine.Move(deltaTime, direction);
-            _engine.Rotate(deltaTime, direction);
+            _engine.Move(deltaTime);
         }
     }
 }

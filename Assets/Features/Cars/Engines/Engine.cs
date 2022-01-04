@@ -5,26 +5,46 @@ namespace Features.Cars.Engines
 {
     public class Engine
     {
+        private readonly PIDRegulator _rotateRegulator;
         private readonly Rigidbody _rigidbody;
         private readonly EngineStats _stats;
 
-        public Engine(EngineStats stats, Rigidbody rigidbody)
+        private float _speed;
+
+        public Engine(EngineStats stats, Rigidbody rigidbody, PIDRegulator rotateRegulator)
         {
             _stats = stats;
             _rigidbody = rigidbody;
+            _rotateRegulator = rotateRegulator;
         }
 
-        public void Move(float deltaTime, Vector3 direction)
+        public void Accelerate()
         {
-            var acceleration = direction.z < 0 ? _stats.BrakingSpeed : _stats.AccelerationSpeed;
-            var force = new Vector3(direction.x * acceleration, 0, direction.z * acceleration);
+            var acceleration =  _stats.AccelerationSpeed;
+            _speed = Mathf.Clamp(_speed + acceleration, -_stats.MaxSpeed, _stats.MaxSpeed);
+        }
+
+        public void Slowdown()
+        {
+            var acceleration = _stats.BrakingSpeed;
+            _speed = Mathf.Clamp(_speed - acceleration, -_stats.MaxSpeed, _stats.MaxSpeed);
+        }
+
+        public void Move(float deltaTime)
+        {
+            var force = _rigidbody.transform.forward * _speed;
             var smoothedForce = force * deltaTime;
-            _rigidbody.AddRelativeForce(smoothedForce, ForceMode.Acceleration);
+            _rigidbody.AddForce(smoothedForce, ForceMode.VelocityChange);
         }
 
-        public void Rotate(float deltaTime, Vector3 direction)
+        public void Rotate(float deltaTime, float xDirection)
         {
-            var torque = new Vector3(0, direction.x * _stats.TurningSpeed * deltaTime, 0);
+            var transform = _rigidbody.transform;
+            var right = transform.right;
+            var direction = right * xDirection;
+            var error = Vector3.Dot(direction, right);
+            var angle = _rotateRegulator.Calculate(error, deltaTime);
+            var torque = new Vector3(0, angle * _stats.TurningSpeed * deltaTime, 0);
             _rigidbody.angularVelocity = torque;
         }
     }

@@ -46,9 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carMarkers:
-  - {fileID: 905851765847911090}
-  - {fileID: 7206180845246814965}
-  - {fileID: 3516778347234508484}
+  - {fileID: 9090069123098305429}
+  - {fileID: 3643573168253853566}
   _pathCreator: {fileID: 1512077878525524954}
   _finish: {fileID: 7330293096389718526}
 --- !u!114 &1512077878525524954
@@ -66,8 +65,8 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -30.60672, y: 0, z: 16.430378}
-      - {x: -36.29239, y: 0, z: -10.22003}
+      - {x: -34.093227, y: 0, z: 31.687075}
+      - {x: -3.4243088, y: 0, z: 30.762815}
       - {x: 16.304827, y: 0, z: 30.241264}
       - {x: 38.785896, y: 0, z: 11.89529}
       - {x: 57.344467, y: 0, z: -3.2496758}
@@ -77,7 +76,7 @@ MonoBehaviour:
       - {x: -105.401596, y: 0, z: -11.600762}
       - {x: -103.93114, y: 0, z: -4.32489}
       - {x: -100.326065, y: 0, z: 13.51313}
-      - {x: -22.534264, y: 0, z: 54.268368}
+      - {x: -72.765175, y: 0, z: 32.852516}
       isClosed: 1
       space: 2
       controlMode: 0
@@ -93,7 +92,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 0
       flipNormals: 0
-    vertexPathUpToDate: 1
+    vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.6
     showTransformTool: 1
@@ -112,7 +111,7 @@ MonoBehaviour:
     showVertexPathOptions: 1
     showNormals: 0
     showNormalsHelpInfo: 0
-    tabIndex: 1
+    tabIndex: 0
   initialized: 1
 --- !u!1 &4940500568259895995
 GameObject:
@@ -123,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8198331711541431750}
-  - component: {fileID: 905851765847911090}
+  - component: {fileID: 9090069123098305429}
   m_Layer: 0
   m_Name: CarMarker
   m_TagString: Untagged
@@ -145,7 +144,7 @@ Transform:
   m_Father: {fileID: 5838494497052551165}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &905851765847911090
+--- !u!114 &9090069123098305429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,7 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4940500568259895995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f56a60b359447e88f7fdc218a3fcdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 10abe9fec60a4d73b2b60e41139a4ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _carId: 0
@@ -188,7 +187,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8198331711541431750}
-  - {fileID: 6858766100578769344}
   - {fileID: 282312891395257902}
   m_Father: {fileID: 1512077878525524956}
   m_RootOrder: 0
@@ -228,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282312891395257902}
   - component: {fileID: 3516778347234508484}
+  - component: {fileID: 3643573168253853566}
   m_Layer: 0
   m_Name: CarMarker
   m_TagString: Untagged
@@ -247,7 +246,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5838494497052551165}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &3516778347234508484
 MonoBehaviour:
@@ -261,48 +260,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f56a60b359447e88f7fdc218a3fcdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _carId: 1
---- !u!1 &8149681309056981344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6858766100578769344}
-  - component: {fileID: 7206180845246814965}
-  m_Layer: 0
-  m_Name: CarMarker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6858766100578769344
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8149681309056981344}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -7, y: 0, z: -0.52}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5838494497052551165}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &7206180845246814965
+--- !u!114 &3643573168253853566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8149681309056981344}
+  m_GameObject: {fileID: 6556029732465284040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f56a60b359447e88f7fdc218a3fcdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 10abe9fec60a4d73b2b60e41139a4ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _carId: 0

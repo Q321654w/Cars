@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cfbba9a1c64676ac52e44fad532148, type: 3}
   m_Name: EngineConfig
   m_EditorClassIdentifier: 
+  _pidRegulator:
+    _kp: 1
+    _ki: 0
+    _kd: 0
   _stats:
     _accelerationSpeed: 300
     _brakingSpeed: 300

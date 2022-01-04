@@ -10,18 +10,25 @@
       <e p="Assets" t="Include">
         <e p="DebugDrawer.cs" t="Include" />
         <e p="Features" t="Include">
+          <e p="Ai.cs" t="Include" />
+          <e p="BotCarMarker.cs" t="Include" />
           <e p="CarMarker.cs" t="Include" />
           <e p="Cars" t="Include">
             <e p="Car.cs" t="Include" />
             <e p="CarFactories" t="Include">
-              <e p="CarConfig.cs" t="Include" />
+              <e p="CarFactory.cs" t="Include" />
+              <e p="Configs" t="Include">
+                <e p="CarConfig.cs" t="Include" />
+              </e>
             </e>
             <e p="Engines" t="Include">
-              <e p="Configs" t="Include">
-                <e p="EngineConfig.cs" t="Include" />
-              </e>
               <e p="Engine.cs" t="Include" />
-              <e p="EngineFactory.cs" t="Include" />
+              <e p="Factories" t="Include">
+                <e p="Configs" t="Include">
+                  <e p="EngineConfig.cs" t="Include" />
+                </e>
+                <e p="EngineFactory.cs" t="Include" />
+              </e>
               <e p="Stats" t="Include">
                 <e p="EngineStats.cs" t="Include" />
               </e>
@@ -34,8 +41,6 @@
             <e p="IGameUpdate.cs" t="Include" />
           </e>
           <e p="IDirectionProviders" t="Include">
-            <e p="IDirectionProvider.cs" t="Include" />
-            <e p="KeyboardDirectionProvider.cs" t="Include" />
             <e p="PathDirectionProvider.cs" t="Include" />
           </e>
           <e p="Level.cs" t="Include" />
@@ -44,6 +49,8 @@
             <e p="Finish.cs" t="Include" />
             <e p="Map.cs" t="Include" />
           </e>
+          <e p="PIDRegulator.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
         </e>
         <e p="Plugins" t="Include">
           <e p="PathCreator" t="Include">
