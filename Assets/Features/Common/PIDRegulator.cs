@@ -23,7 +23,7 @@ namespace Features
         public float Calculate(float error, float deltaTime)
         {
             var p = error;
-            _i = error * deltaTime;
+            _i += error * deltaTime;
             var d = (error - _lastError) / deltaTime;
             _lastError = error;
 

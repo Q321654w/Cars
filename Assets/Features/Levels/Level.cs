@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Features.Cars;
 using Features.GameUpdate;
 using Features.Maps;
@@ -13,25 +12,23 @@ namespace Features
 
         private readonly Map _map;
 
+        private readonly Dictionary<Car, Driver> _cars;
         private readonly Dictionary<Car, int> _loops;
         private readonly int _winLoopCount;
-
-        private readonly Car[] _cars;
-
         private readonly Queue<Car> _scoreBoard;
 
-        public Level(Map map, int winLoopCount, IEnumerable<Car> cars)
+        public Level(Map map, int winLoopCount, Dictionary<Car, Driver> drivers)
         {
             _scoreBoard = new Queue<Car>();
             _loops = new Dictionary<Car, int>();
             _map = map;
             _winLoopCount = winLoopCount;
 
-            _cars = cars.ToArray();
+            _cars = drivers;
 
-            foreach (var car in _cars)
+            foreach (var pair in _cars)
             {
-                _loops.Add(car, 0);
+                _loops.Add(pair.Key, 0);
             }
 
             _map.Finish.Reached += OnFinishReached;
@@ -42,17 +39,33 @@ namespace Features
             _loops[car] += 1;
 
             if (_loops[car] >= _winLoopCount)
-                _scoreBoard.Enqueue(car);
+                AddToScoreBoard(car);
 
-            if (_scoreBoard.Count == _cars.Length)
-                Completed?.Invoke(_scoreBoard);
+            if (_scoreBoard.Count == _cars.Count)
+                CompleteLevel();
+        }
+
+        private void AddToScoreBoard(Car car)
+        {
+            _scoreBoard.Enqueue(car);
+            _cars.Remove(car);
+        }
+
+        private void CompleteLevel()
+        {
+            _map.Finish.Reached -= OnFinishReached;
+            Completed?.Invoke(_scoreBoard);
         }
 
         public void GameUpdate(float deltaTime)
         {
-            foreach (var car in _cars)
+            foreach (var driverCarPair in _cars)
             {
+                var car = driverCarPair.Key;
+                var driver = driverCarPair.Value;
+
                 car.GameUpdate(deltaTime);
+                driver.GameUpdate(deltaTime);
             }
         }
     }

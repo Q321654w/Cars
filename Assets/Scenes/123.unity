@@ -132,8 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 748432476}
-  - component: {fileID: 748432475}
   - component: {fileID: 748432474}
+  - component: {fileID: 748432475}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -162,12 +162,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 748432473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c858b61c2bd240be9a490765f966256f, type: 3}
+  m_Script: {fileID: 11500000, guid: 470ca21ab2fa4b84841c0f20c0981719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelConfig: {fileID: 11400000, guid: 3de1c2f47cafc4e48922269aab32af14, type: 2}
-  _gameUpdates: {fileID: 748432474}
   _carFactory: {fileID: 11400000, guid: c17273437e868b74d80366f514be539a, type: 2}
+  _playerFactory: {fileID: 11400000, guid: b707ee8156bc8a24ea3943b8378dbd19, type: 2}
+  _aiIdContext: Ai
+  _threshold: 5
+  _config: {fileID: 11400000, guid: 3de1c2f47cafc4e48922269aab32af14, type: 2}
+  _updates: {fileID: 748432474}
 --- !u!4 &748432476
 Transform:
   m_ObjectHideFlags: 0
@@ -269,7 +272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074573977}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 15.171555, y: -22.532063, z: -26.375034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

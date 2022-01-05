@@ -1,43 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using Features;
 using Features.Cars;
 using Features.GameUpdate;
 using UnityEngine;
 
-namespace Features
+namespace DefaultNamespace.Features
 {
     public class GameInstaller : MonoBehaviour
     {
-        [SerializeField] private LevelConfig _levelConfig;
-        [SerializeField] private GameUpdates _gameUpdates;
         [SerializeField] private CarFactory _carFactory;
+        [SerializeField] private PlayerDriverFactory _playerFactory;
+        [SerializeField] private string _aiIdContext;
+        [SerializeField] private float _threshold;
+        [SerializeField] private LevelConfig _config;
+        [SerializeField] private GameUpdates _updates;
 
-        private void Awake()
+        private void Start()
         {
-            var map = Instantiate(_levelConfig.MapPrefab);
-            var cars = new List<Car>();
-
-            for (var index = 0; index < map.CarMarkers.Length; index++)
+            var mapBuilder = new MapBuilder();
+            var driverFactories = new IDriverFactory[]
             {
-                var carMarker = map.CarMarkers[index];
-                var car = _carFactory.Create(carMarker.CarId);
-                carMarker.MoToMe(car.transform);
-                cars.Add(car);
-                _gameUpdates.AddToUpdateList(car);
-            }
-
-            var level = new Level(map, _levelConfig.Loops, cars);
-            level.Completed += OnLevelCompleted;
-            var driver = new Player(cars[0]);
-            var secondDriver = new Ai(cars[1], map.VertexPath, 5);
-            _gameUpdates.AddToUpdateList(driver);
-            _gameUpdates.AddToUpdateList(secondDriver);
-            _gameUpdates.AddToUpdateList(level);
-            _gameUpdates.ResumeUpdate();
-        }
-
-        private void OnLevelCompleted(Queue<Car> cars)
-        {
-            Debug.Log("Completed");
+                _playerFactory,
+                new AiDriverFactory(_aiIdContext, _threshold, mapBuilder),
+            };
+            var driverFactory = new DriverFactoryFacade(driverFactories);
+            var levelLoader = new LevelLoader(mapBuilder, _carFactory, driverFactory);
+            var level = levelLoader.Load(_config);
+            _updates.AddToUpdateList(level);
+            _updates.ResumeUpdate();
         }
     }
 }

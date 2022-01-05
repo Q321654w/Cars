@@ -16,9 +16,9 @@ namespace Features
         {
             var xDirection = GetXDirection();
             Car.Rotate(deltaTime, xDirection);
-            
+
             var yDirection = GetZDirection();
-            
+
             if (yDirection > 0)
             {
                 Car.Accelerate();
@@ -27,7 +27,7 @@ namespace Features
 
             if (yDirection < 0)
             {
-                 Car.Slowdown();
+                Car.Slowdown();
             }
         }
 

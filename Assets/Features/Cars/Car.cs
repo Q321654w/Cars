@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Features.Cars
 {
     [RequireComponent(typeof(Rigidbody))]
-    [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(MeshCollider))]
     public class Car : MonoBehaviour, IGameUpdate
     {
         private Engine _engine;

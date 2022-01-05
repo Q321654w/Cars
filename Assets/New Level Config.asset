@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4da4b4fa84d4cb3b36da0d1dda8127e, type: 3}
   m_Name: New Level Config
   m_EditorClassIdentifier: 
+  _driverIds:
+  - Player
+  - Ai
   _mapPrefab: {fileID: 1512077878525524957, guid: 87b4b6448eb2ba4449e28e8d63296146, type: 3}
   _loops: 1
