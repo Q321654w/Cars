@@ -16,11 +16,18 @@ namespace Features
 
         public void OnValidate()
         {
-            var length = _mapPrefab.CarMarkers.Length;
-            
+            var length = _mapPrefab.BotMarkers.Length;
+
             if (_driverIds.Length != length)
             {
+                var lastIds = _driverIds;
                 _driverIds = new string[length];
+                for (int i = 0; i < _driverIds.Length; i++)
+                {
+                    if (i >= lastIds.Length)
+                        return;
+                    _driverIds[i] = lastIds[i];
+                }
             }
         }
     }

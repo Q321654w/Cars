@@ -5,13 +5,14 @@ namespace Features
 {
     public abstract class Driver : IGameUpdate
     {
-        protected Car Car;
-
-        public Driver(Car car)
+        protected readonly Car Car;
+        public Car ControledCar => Car;
+        
+        protected Driver(Car car)
         {
             Car = car;
         }
-
+        
         public void GameUpdate(float deltaTime)
         {
             var xDirection = GetXDirection();

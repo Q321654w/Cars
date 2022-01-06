@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Features.Cars.Engines.Configs;
+using Features.Cars.Engines.Stats;
 using UnityEngine;
 
 namespace Features.Cars.Engines
@@ -12,6 +13,11 @@ namespace Features.Cars.Engines
         public Engine Create(int id, Rigidbody rigidbody)
         {
             var config = _configs.Single(s => s.Id == id);
+            return new Engine(config.Stats, rigidbody, config.PidRegulator);
+        }
+
+        public Engine Create(Rigidbody rigidbody, EngineConfig config)
+        {
             return new Engine(config.Stats, rigidbody, config.PidRegulator);
         }
     }

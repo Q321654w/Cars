@@ -1,25 +1,15 @@
-﻿using Features.Cars;
+﻿using System;
+using Features.Cars;
 
 namespace Features
 {
-    public class DriverFactoryFacade : IDriverFactory
+    public class DriverFactoryFacade
     {
         private IDriverFactory[] _driverFactories;
 
         public DriverFactoryFacade(IDriverFactory[] driverFactories)
         {
             _driverFactories = driverFactories;
-        }
-
-        public bool CanCreate(string id)
-        {
-            var canCreate = false;
-            foreach (var driverFactory in _driverFactories)
-            {
-                canCreate = canCreate || driverFactory.CanCreate(id);
-            }
-
-            return canCreate;
         }
 
         public Driver Create(string id, Car car)
@@ -30,7 +20,7 @@ namespace Features
                     return driverFactory.Create(id, car);
             }
 
-            return null;
+            throw new Exception($"Cant Create Driver by {id}");
         }
     }
 }

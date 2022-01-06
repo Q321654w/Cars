@@ -12,23 +12,23 @@ namespace Features
 
         private readonly Map _map;
 
-        private readonly Dictionary<Car, Driver> _cars;
+        private readonly List<Driver> _drivers;
         private readonly Dictionary<Car, int> _loops;
         private readonly int _winLoopCount;
         private readonly Queue<Car> _scoreBoard;
 
-        public Level(Map map, int winLoopCount, Dictionary<Car, Driver> drivers)
+        public Level(Map map, int winLoopCount, List<Driver> drivers)
         {
             _scoreBoard = new Queue<Car>();
             _loops = new Dictionary<Car, int>();
             _map = map;
             _winLoopCount = winLoopCount;
 
-            _cars = drivers;
+            _drivers = drivers;
 
-            foreach (var pair in _cars)
+            foreach (var driver in _drivers)
             {
-                _loops.Add(pair.Key, 0);
+                _loops.Add(driver.ControledCar, 0);
             }
 
             _map.Finish.Reached += OnFinishReached;
@@ -41,14 +41,15 @@ namespace Features
             if (_loops[car] >= _winLoopCount)
                 AddToScoreBoard(car);
 
-            if (_scoreBoard.Count == _cars.Count)
+            if (_scoreBoard.Count == _drivers.Count)
                 CompleteLevel();
         }
 
         private void AddToScoreBoard(Car car)
         {
             _scoreBoard.Enqueue(car);
-            _cars.Remove(car);
+            var driver = _drivers.Find(s => s.ControledCar == car);
+            _drivers.Remove(driver);
         }
 
         private void CompleteLevel()
@@ -59,13 +60,11 @@ namespace Features
 
         public void GameUpdate(float deltaTime)
         {
-            foreach (var driverCarPair in _cars)
+            foreach (var driver in _drivers)
             {
-                var car = driverCarPair.Key;
-                var driver = driverCarPair.Value;
-
-                car.GameUpdate(deltaTime);
+                var car = driver.ControledCar;
                 driver.GameUpdate(deltaTime);
+                car.GameUpdate(deltaTime);
             }
         }
     }

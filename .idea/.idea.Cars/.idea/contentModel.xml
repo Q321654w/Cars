@@ -16,12 +16,6 @@
         <e p="Features" t="Include">
           <e p="Cars" t="Include">
             <e p="Car.cs" t="Include" />
-            <e p="CarFactories" t="Include">
-              <e p="CarFactory.cs" t="Include" />
-              <e p="Configs" t="Include">
-                <e p="CarConfig.cs" t="Include" />
-              </e>
-            </e>
             <e p="Engines" t="Include">
               <e p="Engine.cs" t="Include" />
               <e p="Factories" t="Include">
@@ -34,11 +28,18 @@
                 <e p="EngineStats.cs" t="Include" />
               </e>
             </e>
+            <e p="Factories" t="Include">
+              <e p="CarFactory.cs" t="Include" />
+              <e p="Configs" t="Include">
+                <e p="CarConfig.cs" t="Include" />
+              </e>
+            </e>
           </e>
           <e p="Common" t="Include">
             <e p="BotCarMarker.cs" t="Include" />
             <e p="CarMarker.cs" t="Include" />
             <e p="PIDRegulator.cs" t="Include" />
+            <e p="PlayerCarMarker.cs" t="Include" />
           </e>
           <e p="Drivers" t="Include">
             <e p="Ai.cs" t="Include" />
@@ -66,6 +67,7 @@
             <e p="Map.cs" t="Include" />
             <e p="MapBuilder.cs" t="Include" />
           </e>
+          <e p="PlayerBuilder.cs" t="Include" />
         </e>
         <e p="Plugins" t="Include">
           <e p="PathCreator" t="Include">

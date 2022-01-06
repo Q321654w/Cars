@@ -2,12 +2,8 @@
 
 namespace Features
 {
-    public class BotCarMarker : CarMarker
+    public class PlayerCarMarker : CarMarker
     {
-        [SerializeField] private int _carId = 0;
-
-        public int CarId => _carId;
-
         private void OnDrawGizmos()
         {
             Gizmos.color = Color;
