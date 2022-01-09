@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: EngineConfig
   m_EditorClassIdentifier: 
   _pidRegulator:
-    _kp: 1
+    _kp: 2
     _ki: 0
-    _kd: 0
+    _kd: 0.01
   _stats:
-    _accelerationSpeed: 1
-    _brakingSpeed: 1
-    _turningSpeed: 100
-    _maxSpeed: 10
+    _accelerationSpeed: 1000
+    _brakingSpeed: 1000
+    _turningSpeed: 1
+    _maxSpeed: 10000
   _id: 0

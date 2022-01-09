@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf0bc63c6374ec28c474b9bb561b98e, type: 3}
   m_Name: PlayerCarConfig
   m_EditorClassIdentifier: 
-  _carPrefab: {fileID: 6178407124914723398, guid: 5fa326816c9aa3546833b5eec2e25307, type: 3}
+  _carPrefab: {fileID: 3724340754367898580, guid: 58b4cd9d68bb0ed44a67c6458c8cb889, type: 3}
   _id: 1
   _engineId: 0

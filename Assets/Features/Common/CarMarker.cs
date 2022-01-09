@@ -12,6 +12,5 @@ namespace Features
             otherTransform.position = transform.position;
             otherTransform.rotation = transform.rotation;
         }
-        
     }
 }

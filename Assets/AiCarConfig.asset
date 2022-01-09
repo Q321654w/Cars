@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf0bc63c6374ec28c474b9bb561b98e, type: 3}
   m_Name: AiCarConfig
   m_EditorClassIdentifier: 
-  _carPrefab: {fileID: 6178407124914723398, guid: 5fa326816c9aa3546833b5eec2e25307, type: 3}
+  _carPrefab: {fileID: 716725928997077842, guid: 1f83341019c03be4db7f9ac9a173deb5, type: 3}
   _id: 0
   _engineId: 0

@@ -404,6 +404,8 @@ namespace PathCreationEditor
                 if (nextIndex != 0 || bezierPath.IsClosed)
                 {
                     Handles.DrawLine(creator.path.GetPoint(i), creator.path.GetPoint(nextIndex));
+                    var direction = (creator.path.GetPoint(nextIndex) - creator.path.GetPoint(i)).normalized;
+                    
                 }
             }
 

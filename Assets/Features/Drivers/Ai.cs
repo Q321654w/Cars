@@ -9,9 +9,9 @@ namespace Features
     {
         private readonly VertexPath _path;
         private readonly float _threshold;
-        private const float DIRECTION_TOLERANCE = 0.25F;
+        private const float DIRECTION_TOLERANCE = 0.10F;
         private const float Y_DIRECTION = 1F;
-        private const float TOLERANCE = 5F;
+        private const float TOLERANCE = 3F;
 
         public Ai(Car car, VertexPath path, float threshold) : base(car)
         {

@@ -1,3 +1,4 @@
+using DefaultNamespace.Features;
 using Features.Cars.Engines;
 using Features.GameUpdate;
 using UnityEngine;
@@ -8,7 +9,10 @@ namespace Features.Cars
     [RequireComponent(typeof(MeshCollider))]
     public class Car : MonoBehaviour, IGameUpdate
     {
+        [SerializeField] private Wheel[] _wheels;
         private Engine _engine;
+
+        public Wheel[] Wheels => _wheels;
 
         public void Initialize(Engine engine)
         {
