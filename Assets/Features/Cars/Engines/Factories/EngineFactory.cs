@@ -13,12 +13,16 @@ namespace Features.Cars.Engines
         public Engine Create(int id, Wheel frontRight, Wheel frontLeft)
         {
             var config = _configs.Single(s => s.Id == id);
-            return new Engine(config.Stats, config.PidRegulator, frontRight, frontLeft);
+            var moveWheels = new Wheel[2] {frontLeft, frontRight};
+            var rotateWheels = new Wheel[2] {frontLeft, frontRight};
+            return new Engine(config.Stats, config.PidRegulator, moveWheels, rotateWheels);
         }
 
         public Engine Create(EngineConfig config, Wheel frontRight, Wheel frontLeft)
         {
-            return new Engine(config.Stats, config.PidRegulator, frontRight, frontLeft);
+            var moveWheels = new Wheel[2] {frontLeft, frontRight};
+            var rotateWheels = new Wheel[2] {frontLeft, frontRight};
+            return new Engine(config.Stats, config.PidRegulator, moveWheels, rotateWheels);
         }
     }
 }

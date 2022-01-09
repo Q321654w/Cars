@@ -38,5 +38,10 @@ namespace Features.Cars
         {
             _engine.Move(deltaTime);
         }
+
+        public void Brake()
+        {
+            _engine.Brake();
+        }
     }
 }

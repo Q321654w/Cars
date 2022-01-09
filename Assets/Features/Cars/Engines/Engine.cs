@@ -1,4 +1,6 @@
-﻿using DefaultNamespace.Features;
+﻿using System.Collections.Generic;
+using System.Linq;
+using DefaultNamespace.Features;
 using Features.Cars.Engines.Stats;
 using UnityEngine;
 
@@ -7,18 +9,18 @@ namespace Features.Cars.Engines
     public class Engine
     {
         private readonly PIDRegulator _rotateRegulator;
-        private readonly Wheel _firstWheel;
-        private readonly Wheel _secondWheel;
+        private readonly Wheel[] _moveWheels;
+        private readonly Wheel[] _rotateWheels;
         private readonly EngineStats _stats;
 
         private float _speed;
 
-        public Engine(EngineStats stats, PIDRegulator rotateRegulator, Wheel firstWheel, Wheel secondWheel)
+        public Engine(EngineStats stats, PIDRegulator rotateRegulator, IEnumerable<Wheel> moveWheels, IEnumerable<Wheel> rotatingWheels)
         {
             _stats = stats;
-            _firstWheel = firstWheel;
             _rotateRegulator = rotateRegulator;
-            _secondWheel = secondWheel;
+            _moveWheels = moveWheels.ToArray();
+            _rotateWheels = rotatingWheels.ToArray();
         }
 
         public void Accelerate()
@@ -37,18 +39,29 @@ namespace Features.Cars.Engines
         {
             var force = _speed;
             var smoothedForce = force * deltaTime;
-            _firstWheel.AddTorque(smoothedForce);
+            
+            foreach (var wheel in _moveWheels)
+            {
+                wheel.SetTorque(smoothedForce);
+            }
         }
 
-        public void Rotate(float deltaTime, float xDirection)
+        public void Rotate(float deltaTime, float deltaAngle)
         {
-            var transform = _firstWheel.transform;
-            var right = transform.right;
-            var direction = right;
-            var error = Vector3.Dot(direction, right);
-            var angle = _rotateRegulator.Calculate(error, deltaTime) * _stats.TurningSpeed * xDirection;
-            _firstWheel.AddSteerAngle(angle);
-            _secondWheel.AddSteerAngle(angle);
+            var clampedAngle = Mathf.Clamp(deltaAngle, -_stats.TurningSpeed, _stats.TurningSpeed);
+
+            foreach (var wheel in _rotateWheels)
+            {
+                wheel.AddSteerAngle(clampedAngle);
+            }
+        }
+
+        public void Brake()
+        {
+            foreach (var wheel in _moveWheels)
+            {
+                wheel.SetBrake(_speed);
+            }
         }
     }
 }

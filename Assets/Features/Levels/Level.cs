@@ -48,6 +48,7 @@ namespace Features
         private void AddToScoreBoard(Car car)
         {
             _scoreBoard.Enqueue(car);
+            car.Brake();
             var driver = _drivers.Find(s => s.ControledCar == car);
             _drivers.Remove(driver);
         }

@@ -1,4 +1,6 @@
-﻿using DefaultNamespace;
+﻿using System.Linq;
+using DefaultNamespace;
+using DefaultNamespace.Features;
 using Features.Cars;
 using PathCreation;
 using UnityEngine;
@@ -9,14 +11,15 @@ namespace Features
     {
         private readonly VertexPath _path;
         private readonly float _threshold;
-        private const float DIRECTION_TOLERANCE = 0.10F;
-        private const float Y_DIRECTION = 1F;
-        private const float TOLERANCE = 3F;
+        private readonly Wheel _frontRightWheel;
 
+        private const float Y_DIRECTION = 1F;
+        
         public Ai(Car car, VertexPath path, float threshold) : base(car)
         {
             _path = path;
             _threshold = threshold;
+            _frontRightWheel = Car.Wheels.Single(s => s.Position == WheelPosition.FrontRight);
         }
 
         protected override float GetXDirection()
@@ -27,22 +30,20 @@ namespace Features
             var point = _path.GetPointAtDistance(distanceAlongPath);
             DebugDrawer.DrawCross(point, 3, Color.red, Time.deltaTime);
 
-            float sign = 0;
             var distance = Vector3.Distance(position, point);
             distanceAlongPath += distance + _threshold;
             point = _path.GetPointAtDistance(distanceAlongPath);
 
             var pathDirection = (point - position).normalized;
             DebugDrawer.DrawCross(point, 3, Color.yellow, Time.deltaTime);
-            var currentDirection = transform.right;
-            var dot = Vector3.Dot(pathDirection, currentDirection);
 
-            if (Mathf.Abs(distance) > TOLERANCE || Mathf.Abs(dot) > DIRECTION_TOLERANCE)
-            {
-                sign = Mathf.Sign(dot);
-            }
-
-            return sign;
+            var steerAngleInRadians = _frontRightWheel.SteerAngle * Mathf.Deg2Rad;
+            var localDirection = new Vector3(Mathf.Sin(steerAngleInRadians), 0, Mathf.Cos(steerAngleInRadians));
+            var globalDirection = transform.TransformDirection(localDirection);
+            Debug.DrawRay(transform.position + Vector3.up, globalDirection, Color.black, Time.deltaTime);
+            Debug.DrawRay(transform.position + Vector3.up, pathDirection, Color.red, Time.deltaTime);
+            var angle = Vector3.SignedAngle(globalDirection, pathDirection, transform.up);
+            return angle;
         }
 
         protected override float GetZDirection()
