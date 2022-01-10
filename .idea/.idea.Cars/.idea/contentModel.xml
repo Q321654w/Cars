@@ -36,15 +36,18 @@
             </e>
             <e p="Wheels" t="Include">
               <e p="Wheel.cs" t="Include" />
+              <e p="WheelConfig.cs" t="Include" />
+              <e p="WheelFactory.cs" t="Include" />
               <e p="WheelMeshSynchronizer.cs" t="Include" />
-              <e p="WheelPosition.cs" t="Include" />
+              <e p="WheelPrefabPair.cs" t="Include" />
             </e>
           </e>
           <e p="Common" t="Include">
             <e p="BotCarMarker.cs" t="Include" />
-            <e p="CarMarker.cs" t="Include" />
+            <e p="Marker.cs" t="Include" />
             <e p="PIDRegulator.cs" t="Include" />
             <e p="PlayerCarMarker.cs" t="Include" />
+            <e p="WheelMarker.cs" t="Include" />
           </e>
           <e p="Drivers" t="Include">
             <e p="Ai.cs" t="Include" />

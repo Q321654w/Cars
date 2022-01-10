@@ -1,15 +1,19 @@
-﻿using UnityEngine;
+﻿using Features.GameUpdate;
+using UnityEngine;
 
 namespace DefaultNamespace.Features
 {
-    public class Wheel : MonoBehaviour
+    public class Wheel : MonoBehaviour, IGameUpdate
     {
-        [SerializeField] private WheelPosition _position;
-        [SerializeField] private WheelMeshSynchronizer _meshSynchronizer;
         [SerializeField] private float _maxRotationAngle;
+        private WheelMeshSynchronizer _meshSynchronizer;
 
         public float SteerAngle => _meshSynchronizer.WheelCollider.steerAngle;
-        public WheelPosition Position => _position;
+
+        public void Initialize(WheelMeshSynchronizer wheelMeshSynchronizer)
+        {
+            _meshSynchronizer = wheelMeshSynchronizer;
+        }
 
         public void AddSteerAngle(float angle)
         {
@@ -26,6 +30,11 @@ namespace DefaultNamespace.Features
         public void SetBrake(float brakeForce)
         {
             _meshSynchronizer.WheelCollider.brakeTorque = brakeForce;
+        }
+
+        public void GameUpdate(float deltaTime)
+        {
+            _meshSynchronizer.GameUpdate(deltaTime);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Features
 {
-    public class BotCarMarker : CarMarker
+    public class BotCarMarker : Marker
     {
         [SerializeField] private int _carId = 0;
 

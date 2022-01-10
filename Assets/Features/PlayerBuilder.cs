@@ -1,22 +1,19 @@
 ﻿using Features;
 using Features.Cars;
-using Features.Cars.Engines.Configs;
 
 namespace DefaultNamespace.Features
 {
     public class PlayerBuilder
     {
-        private Car _prefab;
+        private CarConfig _config;
         private PlayerDriverFactory _playerDriverFactory;
         private CarFactory _carFactory;
-        private EngineConfig _config;
 
         private string _playerId;
 
-        public PlayerBuilder(Car prefab, PlayerDriverFactory playerDriverFactory, CarFactory carFactory, string playerId,
-            EngineConfig config)
+        public PlayerBuilder(PlayerDriverFactory playerDriverFactory, CarFactory carFactory, string playerId,
+            CarConfig config)
         {
-            _prefab = prefab;
             _playerDriverFactory = playerDriverFactory;
             _carFactory = carFactory;
 
@@ -27,11 +24,11 @@ namespace DefaultNamespace.Features
         public Driver BuildPlayer()
         {
             Driver driver = null;
-            
-            var car = _carFactory.Create(_prefab, _config);
+
+            var car = _carFactory.Create(_config);
             if (_playerDriverFactory.CanCreate(_playerId))
                 driver = _playerDriverFactory.Create(_playerId, car);
-            
+
             return driver;
         }
     }

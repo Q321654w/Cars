@@ -13,14 +13,15 @@ namespace Features.Cars.Engines
         private readonly Wheel[] _rotateWheels;
         private readonly EngineStats _stats;
 
+        public Wheel[] RotateWheels => _rotateWheels;
         private float _speed;
 
-        public Engine(EngineStats stats, PIDRegulator rotateRegulator, IEnumerable<Wheel> moveWheels, IEnumerable<Wheel> rotatingWheels)
+        public Engine(EngineStats stats, PIDRegulator rotateRegulator, IEnumerable<Wheel> moveWheels, IEnumerable<Wheel> rotateWheels)
         {
             _stats = stats;
             _rotateRegulator = rotateRegulator;
             _moveWheels = moveWheels.ToArray();
-            _rotateWheels = rotatingWheels.ToArray();
+            _rotateWheels = rotateWheels.ToArray();
         }
 
         public void Accelerate()

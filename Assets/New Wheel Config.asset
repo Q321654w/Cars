@@ -9,16 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7cfbba9a1c64676ac52e44fad532148, type: 3}
-  m_Name: EngineConfig
+  m_Script: {fileID: 11500000, guid: 7044b17e52644e57a743583d94c85699, type: 3}
+  m_Name: New Wheel Config
   m_EditorClassIdentifier: 
-  _pidRegulator:
-    _kp: 2
-    _ki: 0
-    _kd: 0.005
-  _stats:
-    _accelerationSpeed: 1000
-    _brakingSpeed: 1000
-    _turningSpeed: 10
-    _maxSpeed: 10000
   _id: 0
+  _pair: {fileID: 11400000, guid: 08c00cf02759ba94a84d7a5a1ce1a5dc, type: 2}
+  _colliderPrefab: {fileID: 3725085281232933370, guid: 93d541936cb96654990b792bc03dcbaf, type: 3}

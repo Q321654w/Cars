@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using DefaultNamespace.Features;
 using Features.Cars.Engines.Configs;
 using UnityEngine;
@@ -10,18 +11,14 @@ namespace Features.Cars.Engines
     {
         [SerializeField] private EngineConfig[] _configs;
 
-        public Engine Create(int id, Wheel frontRight, Wheel frontLeft)
+        public Engine Create(int id, IEnumerable<Wheel> rotateWheels, IEnumerable<Wheel> moveWheels)
         {
             var config = _configs.Single(s => s.Id == id);
-            var moveWheels = new Wheel[2] {frontLeft, frontRight};
-            var rotateWheels = new Wheel[2] {frontLeft, frontRight};
             return new Engine(config.Stats, config.PidRegulator, moveWheels, rotateWheels);
         }
 
-        public Engine Create(EngineConfig config, Wheel frontRight, Wheel frontLeft)
+        public Engine Create(EngineConfig config, IEnumerable<Wheel> rotateWheels, IEnumerable<Wheel> moveWheels)
         {
-            var moveWheels = new Wheel[2] {frontLeft, frontRight};
-            var rotateWheels = new Wheel[2] {frontLeft, frontRight};
             return new Engine(config.Stats, config.PidRegulator, moveWheels, rotateWheels);
         }
     }

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using DefaultNamespace.Features;
 using Features.Cars.Engines;
 using Features.GameUpdate;
@@ -9,14 +11,18 @@ namespace Features.Cars
     [RequireComponent(typeof(MeshCollider))]
     public class Car : MonoBehaviour, IGameUpdate
     {
-        [SerializeField] private Wheel[] _wheels;
+        [SerializeField] private WheelMarker[] _wheelMarkers;
+        public WheelMarker[] WheelMarkers => _wheelMarkers;
+
         private Engine _engine;
+        private Wheel[] _wheels;
 
-        public Wheel[] Wheels => _wheels;
+        public Wheel[] RotateWheels => _engine.RotateWheels;
 
-        public void Initialize(Engine engine)
+        public void Initialize(Engine engine, IEnumerable<Wheel> wheels)
         {
             _engine = engine;
+            _wheels = wheels.ToArray();
         }
 
         public void Accelerate()
@@ -37,6 +43,11 @@ namespace Features.Cars
         public void GameUpdate(float deltaTime)
         {
             _engine.Move(deltaTime);
+            
+            foreach (var wheel in _wheels)
+            {
+                wheel.GameUpdate(deltaTime);
+            }
         }
 
         public void Brake()

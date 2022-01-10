@@ -2,7 +2,7 @@
 
 namespace Features
 {
-    public abstract class CarMarker : MonoBehaviour
+    public abstract class Marker : MonoBehaviour
     {
         [SerializeField] protected Color Color;
         [SerializeField] protected Vector3 Size;

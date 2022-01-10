@@ -2,7 +2,7 @@
 
 namespace Features
 {
-    public class PlayerCarMarker : CarMarker
+    public class PlayerCarMarker : Marker
     {
         private void OnDrawGizmos()
         {

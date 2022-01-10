@@ -2,8 +2,8 @@
 using Features;
 using UnityEditor;
 
-[CustomEditor(typeof(CarMarker))]
-public class CarMarkerEditor : Editor
+[CustomEditor(typeof(Marker))]
+public class MarkerEditor : Editor
 {
     private void OnSceneGUI()
     {

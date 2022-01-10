@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using DefaultNamespace;
+﻿using DefaultNamespace;
 using DefaultNamespace.Features;
 using Features.Cars;
 using PathCreation;
@@ -11,7 +10,7 @@ namespace Features
     {
         private readonly VertexPath _path;
         private readonly float _threshold;
-        private readonly Wheel _frontRightWheel;
+        private readonly Wheel _wheel;
 
         private const float Y_DIRECTION = 1F;
         
@@ -19,7 +18,7 @@ namespace Features
         {
             _path = path;
             _threshold = threshold;
-            _frontRightWheel = Car.Wheels.Single(s => s.Position == WheelPosition.FrontRight);
+            _wheel = Car.RotateWheels[0];
         }
 
         protected override float GetXDirection()
@@ -37,7 +36,7 @@ namespace Features
             var pathDirection = (point - position).normalized;
             DebugDrawer.DrawCross(point, 3, Color.yellow, Time.deltaTime);
 
-            var steerAngleInRadians = _frontRightWheel.SteerAngle * Mathf.Deg2Rad;
+            var steerAngleInRadians = _wheel.SteerAngle * Mathf.Deg2Rad;
             var localDirection = new Vector3(Mathf.Sin(steerAngleInRadians), 0, Mathf.Cos(steerAngleInRadians));
             var globalDirection = transform.TransformDirection(localDirection);
             Debug.DrawRay(transform.position + Vector3.up, globalDirection, Color.black, Time.deltaTime);

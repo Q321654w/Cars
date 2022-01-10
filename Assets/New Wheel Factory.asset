@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daf0bc63c6374ec28c474b9bb561b98e, type: 3}
-  m_Name: PlayerCarConfig
+  m_Script: {fileID: 11500000, guid: bebd6efc698a4c11b25bc51991ff3f7d, type: 3}
+  m_Name: New Wheel Factory
   m_EditorClassIdentifier: 
-  _carPrefab: {fileID: 3724340754367898580, guid: 58b4cd9d68bb0ed44a67c6458c8cb889, type: 3}
-  _id: 1
-  _engineId: 1
+  _configs:
+  - {fileID: 11400000, guid: 8220198a796e8174f9e5a5d419241a6f, type: 2}

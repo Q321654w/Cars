@@ -172,8 +172,7 @@ MonoBehaviour:
   _config: {fileID: 11400000, guid: 3de1c2f47cafc4e48922269aab32af14, type: 2}
   _updates: {fileID: 748432474}
   _playerId: Player
-  _prefab: {fileID: 3724340754367898580, guid: 58b4cd9d68bb0ed44a67c6458c8cb889, type: 3}
-  _engineConfig: {fileID: 11400000, guid: 1620c6349cc21004ea792e82962c5c3a, type: 2}
+  _carConfig: {fileID: 11400000, guid: 3a20bf0cfb0206a4a8b3a2a379488a45, type: 2}
 --- !u!4 &748432476
 Transform:
   m_ObjectHideFlags: 0
