@@ -36,7 +36,7 @@ namespace Features
             var pathDirection = (point - position).normalized;
             DebugDrawer.DrawCross(point, 3, Color.yellow, Time.deltaTime);
 
-            var steerAngleInRadians = _wheel.SteerAngle * Mathf.Deg2Rad;
+            var steerAngleInRadians = _wheel.Angle * Mathf.Deg2Rad;
             var localDirection = new Vector3(Mathf.Sin(steerAngleInRadians), 0, Mathf.Cos(steerAngleInRadians));
             var globalDirection = transform.TransformDirection(localDirection);
             Debug.DrawRay(transform.position + Vector3.up, globalDirection, Color.black, Time.deltaTime);

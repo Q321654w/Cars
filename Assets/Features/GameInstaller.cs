@@ -1,4 +1,5 @@
-﻿using Features;
+﻿using System.Collections.Generic;
+using Features;
 using Features.Cars;
 using Features.GameUpdate;
 using UnityEngine;
@@ -14,9 +15,10 @@ namespace DefaultNamespace.Features
         [SerializeField] private LevelConfig _config;
         [SerializeField] private GameUpdates _updates;
 
-        [Space(10)] [Header("Player Parametrs")] [SerializeField]
-        private string _playerId;
-
+        [Space(10)] 
+        [Header("Player Parameters")] 
+        
+        [SerializeField] private string _playerId;
         [SerializeField] private CarConfig _carConfig;
 
         private void Start()
@@ -31,8 +33,17 @@ namespace DefaultNamespace.Features
             var playerBuilder = new PlayerBuilder(_playerFactory, _carFactory, _playerId, _carConfig);
             var levelLoader = new LevelLoader(mapBuilder, _carFactory, driverFactory, playerBuilder);
             var level = levelLoader.Load(_config);
+            level.Completed += OnLevelCompleted;
             _updates.AddToUpdateList(level);
             _updates.ResumeUpdate();
+        }
+
+        private void OnLevelCompleted(Queue<Car> cars)
+        {
+            foreach (var car in cars)
+            {
+                Debug.Log(car.name);
+            }
         }
     }
 }

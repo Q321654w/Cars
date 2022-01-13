@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13a5c6257614b08947332b0ab50bc96, type: 3}
+  m_Name: New Wheel Prefab Pair
+  m_EditorClassIdentifier: 
+  _rightWheelPrefab: {fileID: 2725340489434624074, guid: ea930473465da2d47b0ce5eb96cd9096, type: 3}
+  _leftWheelPrefab: {fileID: 6998090254010161987, guid: 877c81cd007a57249aec3cc10c263b3f, type: 3}

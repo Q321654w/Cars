@@ -21,7 +21,7 @@ namespace Features
             if (horizontalDirection == 0)
             {
                 var transform = Car.transform;
-                var steerAngleInRadians = _wheel.SteerAngle * Mathf.Deg2Rad;
+                var steerAngleInRadians = _wheel.Angle * Mathf.Deg2Rad;
                 var localDirection = new Vector3(Mathf.Sin(steerAngleInRadians), 0, Mathf.Cos(steerAngleInRadians));
                 var globalDirection = transform.TransformDirection(localDirection);
                 return Vector3.SignedAngle(globalDirection, transform.forward, transform.up);

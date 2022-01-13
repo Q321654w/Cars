@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf0bc63c6374ec28c474b9bb561b98e, type: 3}
+  m_Name: AiCarConfig
+  m_EditorClassIdentifier: 
+  _carPrefab: {fileID: 716725928997077842, guid: 511a5348c1767a546ae0db3f365bc354, type: 3}
+  _id: 0
+  _engineId: 0

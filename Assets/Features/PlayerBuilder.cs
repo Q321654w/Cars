@@ -5,11 +5,11 @@ namespace DefaultNamespace.Features
 {
     public class PlayerBuilder
     {
-        private CarConfig _config;
-        private PlayerDriverFactory _playerDriverFactory;
-        private CarFactory _carFactory;
+        private readonly CarConfig _config;
+        private readonly PlayerDriverFactory _playerDriverFactory;
+        private readonly CarFactory _carFactory;
 
-        private string _playerId;
+        private readonly string _playerId;
 
         public PlayerBuilder(PlayerDriverFactory playerDriverFactory, CarFactory carFactory, string playerId,
             CarConfig config)

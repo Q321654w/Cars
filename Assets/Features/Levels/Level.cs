@@ -41,7 +41,7 @@ namespace Features
             if (_loops[car] >= _winLoopCount)
                 AddToScoreBoard(car);
 
-            if (_scoreBoard.Count == _drivers.Count)
+            if (_drivers.Count == 0)
                 CompleteLevel();
         }
 

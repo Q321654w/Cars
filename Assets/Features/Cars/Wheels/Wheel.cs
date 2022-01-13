@@ -8,7 +8,7 @@ namespace DefaultNamespace.Features
         [SerializeField] private float _maxRotationAngle;
         private WheelMeshSynchronizer _meshSynchronizer;
 
-        public float SteerAngle => _meshSynchronizer.WheelCollider.steerAngle;
+        public float Angle => _meshSynchronizer.WheelCollider.steerAngle;
 
         public void Initialize(WheelMeshSynchronizer wheelMeshSynchronizer)
         {
