@@ -5,13 +5,9 @@
     <e p="C:\Users\PC\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Cars.1505742276.00" t="ExcludeRecursive" />
     <e p="C:\Users\PC\AppData\Roaming\JetBrains\Rider2020.1\extensions" t="IncludeRecursive" />
     <e p="C:\Users\PC\Desktop\Projects\Cars" t="IncludeRecursive">
-      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Editor" t="Include">
-          <e p="CarMarkerEditor.cs" t="Include" />
-        </e>
         <e p="Features" t="Include">
           <e p="AppStartUp" t="Include">
             <e p="App.cs" t="Include" />
@@ -21,8 +17,8 @@
             <e p="AssetDataBase.cs" t="Include" />
             <e p="Constants.cs" t="Include" />
             <e p="EndGame.cs" t="Include" />
+            <e p="ExecuteChain.cs" t="Include" />
             <e p="ExitApp.cs" t="Include" />
-            <e p="Game.cs" t="Include" />
             <e p="GameInfoContainer.cs" t="Include" />
             <e p="GameStateMachine.cs" t="Include" />
             <e p="IAppState.cs" t="Include" />
@@ -30,7 +26,6 @@
             <e p="InApp.cs" t="Include" />
             <e p="InGame.cs" t="Include" />
             <e p="InMenu.cs" t="Include" />
-            <e p="ITrigger.cs" t="Include" />
             <e p="LoadApp.cs" t="Include" />
             <e p="LoadGame.cs" t="Include" />
             <e p="MainMenuView.cs" t="Include" />

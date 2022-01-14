@@ -90,6 +90,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 716725928997077842, guid: 511a5348c1767a546ae0db3f365bc354, type: 3}
+      propertyPath: _wheelMarkers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 716725928997077842, guid: 511a5348c1767a546ae0db3f365bc354, type: 3}
+      propertyPath: _wheelMarkers.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 716725928997077842, guid: 511a5348c1767a546ae0db3f365bc354, type: 3}
+      propertyPath: _wheelMarkers.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4304007862672683161, guid: 511a5348c1767a546ae0db3f365bc354, type: 3}
       propertyPath: m_Name
       value: GreenCar

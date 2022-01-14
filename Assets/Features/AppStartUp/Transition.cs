@@ -7,18 +7,14 @@ namespace DefaultNamespace
         public event Action<IGameState> SwitchStateRequested;
         
         private readonly IGameState _targetState;
-        private readonly ITrigger _trigger;
 
-        public Transition(IGameState targetState, ITrigger trigger)
+        public Transition(IGameState targetState)
         {
             _targetState = targetState;
-            _trigger = trigger;
-            _trigger.Triggered += OnTriggered;
         }
 
-        private void OnTriggered()
+        public void GoToNextState()
         {
-            _trigger.Triggered -= OnTriggered;
             SwitchStateRequested?.Invoke(_targetState);
         }
     }

@@ -32,7 +32,7 @@ namespace Features
 
         protected override float GetZDirection()
         {
-            return Input.GetAxis("Vertical");
+            return Input.GetAxisRaw("Vertical");
         }
     }
 }

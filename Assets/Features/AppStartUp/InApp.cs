@@ -26,7 +26,7 @@ namespace DefaultNamespace
             {
                 [inMenu] = new List<Transition>()
                 {
-   //                 new Transition(loadGame,),
+                    new Transition(loadGame),
                 },
                 [loadGame] = new List<Transition>()
                 {

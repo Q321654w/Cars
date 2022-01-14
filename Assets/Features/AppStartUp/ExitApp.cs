@@ -7,17 +7,17 @@ namespace DefaultNamespace
         public event Action Ended;
 
         private readonly AppInfoContainer _appInfoContainer;
-        private readonly Action _exit;
+        private readonly Action _quit;
         
-        public ExitApp(AppInfoContainer appInfoContainer, Action exit)
+        public ExitApp(AppInfoContainer appInfoContainer, Action quit)
         {
             _appInfoContainer = appInfoContainer;
-            _exit = exit;
+            _quit = quit;
         }
 
         public void Enter()
         {
-            _exit.Invoke();
+            _quit.Invoke();
         }
 
         public void Exit()

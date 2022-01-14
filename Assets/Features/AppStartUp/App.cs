@@ -1,49 +1,26 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DefaultNamespace
 {
     public class App
     {
-        private readonly Queue<IAppState> _states;
-        private IAppState _currentState;
+        private readonly AppInfoContainer _container;
+        private ExecuteChain _chain;
 
         public App()
         {
-            var appInfoContainer = new AppInfoContainer();
-
-            var loadApp = new LoadApp(appInfoContainer);
-            var inApp = new InApp(appInfoContainer);
-            var exitApp = new ExitApp(appInfoContainer, Exit);
-
-            _states = new Queue<IAppState>();
-
-            _states.Enqueue(loadApp);
-            _states.Enqueue(inApp);
-            _states.Enqueue(exitApp);
+            _container = new AppInfoContainer();
         }
 
-        public void Start()
-        {
-            _currentState = _states.Dequeue();
-            _currentState.Ended += OnStateEnded;
-            _currentState.Enter();
-        }
+        public void Start() =>
+            _chain = new ExecuteChain()
+                .Append(new LoadApp(_container))
+                .Append(new InApp(_container))
+                .Append(new ExitApp(_container, Quit))
+                .Run();
+        
 
-        private void OnStateEnded()
-        {
-            _currentState.Ended -= OnStateEnded;
-            _currentState.Exit();
-
-            _currentState = _states.Dequeue();
-
-            _currentState.Ended += OnStateEnded;
-            _currentState.Enter();
-        }
-
-        private void Exit()
-        {
+        private void Quit() =>
             Application.Quit();
-        }
     }
 }
