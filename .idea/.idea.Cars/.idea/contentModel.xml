@@ -9,30 +9,38 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Features" t="Include">
-          <e p="AppStartUp" t="Include">
+          <e p="App" t="Include">
             <e p="App.cs" t="Include" />
             <e p="AppInfoContainer.cs" t="Include" />
-            <e p="AppStartUp.cs" t="Include" />
+            <e p="ExecuteChain.cs" t="Include" />
+            <e p="IAppStates" t="Include">
+              <e p="AppStartUp.cs" t="Include" />
+              <e p="ExitApp.cs" t="Include" />
+              <e p="IAppState.cs" t="Include" />
+              <e p="InAppState" t="Include">
+                <e p="GameInfoContainer.cs" t="Include" />
+                <e p="GameStateMachine" t="Include">
+                  <e p="GameStateMachine.cs" t="Include" />
+                  <e p="IGameState" t="Include">
+                    <e p="EndGame.cs" t="Include" />
+                    <e p="IGameState.cs" t="Include" />
+                    <e p="InGame.cs" t="Include" />
+                    <e p="InMenu.cs" t="Include" />
+                    <e p="LoadGame.cs" t="Include" />
+                    <e p="Pause.cs" t="Include" />
+                    <e p="Transition.cs" t="Include" />
+                  </e>
+                  <e p="IStateSwitcher.cs" t="Include" />
+                </e>
+                <e p="InApp.cs" t="Include" />
+              </e>
+              <e p="LoadApp.cs" t="Include" />
+            </e>
+            <e p="Settings.cs" t="Include" />
+          </e>
+          <e p="AssetDataBase" t="Include">
             <e p="Asset.cs" t="Include" />
             <e p="AssetDataBase.cs" t="Include" />
-            <e p="Constants.cs" t="Include" />
-            <e p="EndGame.cs" t="Include" />
-            <e p="ExecuteChain.cs" t="Include" />
-            <e p="ExitApp.cs" t="Include" />
-            <e p="GameInfoContainer.cs" t="Include" />
-            <e p="GameStateMachine.cs" t="Include" />
-            <e p="IAppState.cs" t="Include" />
-            <e p="IGameState.cs" t="Include" />
-            <e p="InApp.cs" t="Include" />
-            <e p="InGame.cs" t="Include" />
-            <e p="InMenu.cs" t="Include" />
-            <e p="LoadApp.cs" t="Include" />
-            <e p="LoadGame.cs" t="Include" />
-            <e p="MainMenuView.cs" t="Include" />
-            <e p="MasterView.cs" t="Include" />
-            <e p="Pause.cs" t="Include" />
-            <e p="Settings.cs" t="Include" />
-            <e p="Transition.cs" t="Include" />
           </e>
           <e p="Cars" t="Include">
             <e p="Car.cs" t="Include" />
@@ -64,6 +72,7 @@
           </e>
           <e p="Common" t="Include">
             <e p="BotCarMarker.cs" t="Include" />
+            <e p="Constants.cs" t="Include" />
             <e p="CustomButton.cs" t="Include" />
             <e p="DebugDrawer.cs" t="Include" />
             <e p="Marker.cs" t="Include" />
@@ -87,6 +96,7 @@
             <e p="GameUpdates.cs" t="Include" />
             <e p="IGameUpdate.cs" t="Include" />
           </e>
+          <e p="IWindow.cs" t="Include" />
           <e p="Levels" t="Include">
             <e p="Level.cs" t="Include" />
             <e p="LevelConfig.cs" t="Include" />
@@ -98,6 +108,12 @@
             <e p="MapBuilder.cs" t="Include" />
           </e>
           <e p="PlayerBuilder.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="MainMenuPresenter.cs" t="Include" />
+            <e p="MainMenuView.cs" t="Include" />
+            <e p="WindowFactory.cs" t="Include" />
+            <e p="WindowType.cs" t="Include" />
+          </e>
         </e>
         <e p="Plugins" t="Include">
           <e p="PathCreator" t="Include">
