@@ -16,9 +16,8 @@ namespace DefaultNamespace.Features
         [SerializeField] private GameUpdates _updates;
 
         [Space(10)] 
-        [Header("Player Parameters")] 
+        [Header("Player Parameters")]
         
-        [SerializeField] private string _playerId;
         [SerializeField] private CarConfig _carConfig;
 
         private void Start()
@@ -27,23 +26,14 @@ namespace DefaultNamespace.Features
             var driverFactories = new IDriverFactory[]
             {
                 _playerFactory,
-                new AiDriverFactory(_aiIdContext, _threshold, mapBuilder),
+                new AiDriverFactory(_threshold, mapBuilder),
             };
             var driverFactory = new DriverFactoryFacade(driverFactories);
-            var playerBuilder = new PlayerBuilder(_playerFactory, _carFactory, _playerId, _carConfig);
+            var playerBuilder = new PlayerBuilder(_playerFactory, _carFactory, _carConfig);
             var levelLoader = new LevelLoader(mapBuilder, _carFactory, driverFactory, playerBuilder);
             var level = levelLoader.Load(_config);
-            level.Completed += OnLevelCompleted;
             _updates.AddToUpdateList(level);
             _updates.ResumeUpdate();
-        }
-
-        private void OnLevelCompleted(Queue<Car> cars)
-        {
-            foreach (var car in cars)
-            {
-                Debug.Log(car.name);
-            }
         }
     }
 }

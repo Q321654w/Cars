@@ -12,8 +12,9 @@ namespace Features
         private readonly float _threshold;
         private readonly Wheel _wheel;
 
+        private const float MAX_DISTANCE = 10F;
         private const float Y_DIRECTION = 1F;
-        
+
         public Ai(Car car, VertexPath path, float threshold) : base(car)
         {
             _path = path;
@@ -30,7 +31,8 @@ namespace Features
             DebugDrawer.DrawCross(point, 3, Color.red, Time.deltaTime);
 
             var distance = Vector3.Distance(position, point);
-            distanceAlongPath += distance + _threshold;
+            var clampedDistance = Mathf.Clamp(distance, 0, MAX_DISTANCE);
+            distanceAlongPath += clampedDistance + _threshold;
             point = _path.GetPointAtDistance(distanceAlongPath);
 
             var pathDirection = (point - position).normalized;

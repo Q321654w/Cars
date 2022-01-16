@@ -9,25 +9,19 @@ namespace DefaultNamespace.Features
         private readonly PlayerDriverFactory _playerDriverFactory;
         private readonly CarFactory _carFactory;
 
-        private readonly string _playerId;
-
-        public PlayerBuilder(PlayerDriverFactory playerDriverFactory, CarFactory carFactory, string playerId,
+        public PlayerBuilder(PlayerDriverFactory playerDriverFactory, CarFactory carFactory,
             CarConfig config)
         {
             _playerDriverFactory = playerDriverFactory;
             _carFactory = carFactory;
 
-            _playerId = playerId;
             _config = config;
         }
 
         public Driver BuildPlayer()
         {
-            Driver driver = null;
-
             var car = _carFactory.Create(_config);
-            if (_playerDriverFactory.CanCreate(_playerId))
-                driver = _playerDriverFactory.Create(_playerId, car);
+            var driver = _playerDriverFactory.Create(Constants.PLAYER_ID, car);
 
             return driver;
         }

@@ -24,8 +24,12 @@
                   <e p="IGameState" t="Include">
                     <e p="EndGame.cs" t="Include" />
                     <e p="IGameState.cs" t="Include" />
+                    <e p="IGameUpdatesProvider.cs" t="Include" />
+                    <e p="ILevelConfigProvider.cs" t="Include" />
+                    <e p="ILevelProvider.cs" t="Include" />
                     <e p="InGame.cs" t="Include" />
                     <e p="InMenu.cs" t="Include" />
+                    <e p="InSelectingLevel.cs" t="Include" />
                     <e p="LoadGame.cs" t="Include" />
                     <e p="Pause.cs" t="Include" />
                     <e p="Transition.cs" t="Include" />

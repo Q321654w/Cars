@@ -7,7 +7,7 @@ namespace Features
         [SerializeField] protected Color Color;
         [SerializeField] protected Vector3 Size;
 
-        public void MoToMe(Transform otherTransform)
+        public void MoveToMe(Transform otherTransform)
         {
             otherTransform.position = transform.position;
             otherTransform.rotation = transform.rotation;

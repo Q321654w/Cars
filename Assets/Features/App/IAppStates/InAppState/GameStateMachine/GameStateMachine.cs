@@ -1,12 +1,17 @@
-﻿namespace DefaultNamespace
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace DefaultNamespace
 {
     public class GameStateMachine : IStateSwitcher
     {
+        private List<IGameState> _states;
         private IGameState _currentState;
 
-        public GameStateMachine(IGameState currentState)
+        public GameStateMachine(IGameState currentState, IEnumerable<IGameState> states)
         {
             _currentState = currentState;
+            _states = states.ToList();
         }
 
         public void Start()

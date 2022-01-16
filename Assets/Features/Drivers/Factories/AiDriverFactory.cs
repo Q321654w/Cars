@@ -1,4 +1,5 @@
-﻿using Features.Cars;
+﻿using DefaultNamespace;
+using Features.Cars;
 using Features.Maps;
 using PathCreation;
 
@@ -9,11 +10,9 @@ namespace Features
         private readonly float _threshold;
         private readonly MapBuilder _mapBuilder;
         private VertexPath _vertexPath;
-        private readonly string _idContext;
 
-        public AiDriverFactory(string idContext , float threshold, MapBuilder mapBuilder)
+        public AiDriverFactory(float threshold, MapBuilder mapBuilder)
         {
-            _idContext = idContext;
             _threshold = threshold;
             _mapBuilder = mapBuilder;
             _mapBuilder.Created += OnCreated;
@@ -27,7 +26,7 @@ namespace Features
 
         public bool CanCreate(string id)
         {
-            return id.Contains(_idContext);
+            return id.Contains(Constants.AI_ID_CONTEXT);
         }
 
         public Driver Create(string id, Car car)

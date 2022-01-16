@@ -1,4 +1,5 @@
-﻿using Features.Maps;
+﻿using Features.Cars;
+using Features.Maps;
 using UnityEngine;
 
 namespace Features
@@ -9,10 +10,14 @@ namespace Features
         [SerializeField] private string[] _driverIds;
         [SerializeField] private Map _mapPrefab;
         [SerializeField] private int _loops;
+        [SerializeField] private CarConfig _playerConfig;
 
         public Map MapPrefab => _mapPrefab;
         public int Loops => _loops;
         public string[] DriverIds => _driverIds;
+        public CarConfig PlayerConfig => _playerConfig;
+
+#if UNITY_EDITOR
 
         public void OnValidate()
         {
@@ -30,5 +35,7 @@ namespace Features
                 }
             }
         }
+
+#endif
     }
 }

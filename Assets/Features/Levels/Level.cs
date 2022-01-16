@@ -68,5 +68,10 @@ namespace Features
                 car.GameUpdate(deltaTime);
             }
         }
+
+        public void CleanUp()
+        {
+           
+        }
     }
 }

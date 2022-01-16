@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DefaultNamespace
 {
@@ -10,6 +11,8 @@ namespace DefaultNamespace
         private readonly GameStateMachine _gameStateMachine;
         private MainMenuPresenter _presenter;
 
+        private List<Transition> _transitions;
+
         public InApp(AppInfoContainer appInfoContainer)
         {
             _appInfoContainer = appInfoContainer;
@@ -17,14 +20,33 @@ namespace DefaultNamespace
 
             var windowFactory = new WindowFactory(assetDataBase);
             var inMenu = new InMenu();
-            var loadGame = new LoadGame();
-            var inGame = new InGame();
-            var pause = new Pause();
-            var endGame = new EndGame();
+            var inSelectingLevel = new InSelectingLevel();
+            var loadGame = new LoadGame(inSelectingLevel, _appInfoContainer.GameInfoContainer, assetDataBase);
+            var inGame = new InGame(loadGame, loadGame);
+            var pause = new Pause(loadGame);
+            var endGame = new EndGame(loadGame);
 
-            _gameStateMachine = new GameStateMachine(inMenu);
-            var loadGameTransition = new Transition(loadGame, _gameStateMachine);
-            _presenter = new MainMenuPresenter(windowFactory, inMenu, loadGameTransition);
+            var states = new List<IGameState>()
+            {
+                inMenu, inSelectingLevel, loadGame, inGame, pause, endGame
+            };
+
+            _gameStateMachine = new GameStateMachine(inMenu, states);
+            var menuTransition = new Transition(inSelectingLevel, _gameStateMachine);
+            var levelSelectingTransition = new Transition(loadGame, _gameStateMachine);
+            var loadGameTransition = new Transition(inGame, _gameStateMachine);
+            var inGameTransition = new Transition(pause, _gameStateMachine);
+            var pauseTransition = new Transition(inGame, _gameStateMachine);
+
+            _transitions = new List<Transition>()
+            {
+                menuTransition,
+                levelSelectingTransition,
+                loadGameTransition,
+                inGameTransition, 
+                pauseTransition,
+            };
+            _presenter = new MainMenuPresenter(windowFactory, inMenu, menuTransition);
         }
 
         public void Enter()
@@ -34,7 +56,7 @@ namespace DefaultNamespace
 
         public void Exit()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

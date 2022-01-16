@@ -29,7 +29,7 @@ namespace Features
             {
                 var carMarker = map.BotMarkers[index];
                 var car = _carFactory.Create(carMarker.CarId);
-                carMarker.MoToMe(car.transform);
+                carMarker.MoveToMe(car.transform);
                 
                 var driver = _driverFactory.Create(config.DriverIds[index], car);
 
@@ -37,7 +37,7 @@ namespace Features
             }
 
             var player = _playerBuilder.BuildPlayer();
-            map.PlayerMarker.MoToMe(player.ControledCar.transform);
+            map.PlayerMarker.MoveToMe(player.ControledCar.transform);
             drivers.Add(player);
 
             var level = new Level(map, config.Loops, drivers);

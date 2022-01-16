@@ -1,10 +1,24 @@
-﻿namespace DefaultNamespace
+﻿using Features;
+
+namespace DefaultNamespace
 {
     public class EndGame : IGameState
     {
+        private Level _level;
+
+        public EndGame(ILevelProvider levelProvider)
+        {
+            levelProvider.Loaded += OnLoaded;
+        }
+
+        private void OnLoaded(Level level)
+        {
+            _level = level;
+        }
+
         public void Enter()
         {
-            throw new System.NotImplementedException();
+            _level.CleanUp();
         }
 
         public void Exit()
