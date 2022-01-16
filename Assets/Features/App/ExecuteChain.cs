@@ -32,13 +32,13 @@ namespace DefaultNamespace
         
         private void EnterInState()
         {
+            _currentState = _states.Dequeue();
             _currentState.Ended += OnStateEnded;
             _currentState.Enter();
         }
 
         private void ExitFromState()
         {
-            _currentState = _states.Dequeue();
             _currentState.Ended -= OnStateEnded;
             _currentState.Exit();
         }

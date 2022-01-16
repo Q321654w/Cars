@@ -1,29 +1,25 @@
-﻿using System;
-using DefaultNamespace.Features;
+﻿using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace DefaultNamespace
 {
     public class WindowFactory
     {
+        private readonly Canvas _canvas;
         private readonly AssetDataBase _assetDataBase;
 
         public WindowFactory(AssetDataBase assetDataBase)
         {
             _assetDataBase = assetDataBase;
+            var canvasPrefab = _assetDataBase.GetAsset<Canvas>(Constants.CANVAS_ID);
+            _canvas = Object.Instantiate(canvasPrefab);
         }
 
-        public IWindow CreateWindow(WindowType type)
+        public MainMenuView CreateMainMenu()
         {
-            switch (type)
-            {
-                case WindowType.MainMenu:
-                    var prefab = _assetDataBase.GetAsset<MainMenuView>(Constants.MASTER_VIEW_ID);
-                    var instance = Object.Instantiate(prefab);
-                    return instance;
-            }
-
-            throw new Exception();
+            var prefab = _assetDataBase.GetAsset<MainMenuView>(Constants.MASTER_VIEW_ID);
+            var instance = Object.Instantiate(prefab, _canvas.transform);
+            return instance;
         }
     }
 }

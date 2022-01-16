@@ -1,24 +1,20 @@
-﻿using DefaultNamespace.Features;
+﻿using System;
 
 namespace DefaultNamespace
 {
     public class InMenu : IGameState
     {
-        private readonly IWindow _window;
-
-        public InMenu(IWindow window)
-        {
-            _window = window;
-        }
+        public event Action Entered;
+        public event Action Ended;
 
         public void Enter()
         {
-            _window.Show();
+            Entered?.Invoke();
         }
 
         public void Exit()
         {
-            _window.Hide();
+            Ended?.Invoke();
         }
     }
 }

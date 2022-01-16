@@ -12,9 +12,9 @@
           <e p="App" t="Include">
             <e p="App.cs" t="Include" />
             <e p="AppInfoContainer.cs" t="Include" />
+            <e p="AppStartUp.cs" t="Include" />
             <e p="ExecuteChain.cs" t="Include" />
             <e p="IAppStates" t="Include">
-              <e p="AppStartUp.cs" t="Include" />
               <e p="ExitApp.cs" t="Include" />
               <e p="IAppState.cs" t="Include" />
               <e p="InAppState" t="Include">
@@ -71,15 +71,17 @@
             </e>
           </e>
           <e p="Common" t="Include">
-            <e p="BotCarMarker.cs" t="Include" />
-            <e p="Constants.cs" t="Include" />
             <e p="CustomButton.cs" t="Include" />
-            <e p="DebugDrawer.cs" t="Include" />
-            <e p="Marker.cs" t="Include" />
+            <e p="Markers" t="Include">
+              <e p="BotCarMarker.cs" t="Include" />
+              <e p="Marker.cs" t="Include" />
+              <e p="PlayerCarMarker.cs" t="Include" />
+              <e p="WheelMarker.cs" t="Include" />
+            </e>
             <e p="PIDRegulator.cs" t="Include" />
-            <e p="PlayerCarMarker.cs" t="Include" />
-            <e p="WheelMarker.cs" t="Include" />
           </e>
+          <e p="Constants.cs" t="Include" />
+          <e p="DebugDrawer.cs" t="Include" />
           <e p="Drivers" t="Include">
             <e p="Ai.cs" t="Include" />
             <e p="Driver.cs" t="Include" />
@@ -112,7 +114,6 @@
             <e p="MainMenuPresenter.cs" t="Include" />
             <e p="MainMenuView.cs" t="Include" />
             <e p="WindowFactory.cs" t="Include" />
-            <e p="WindowType.cs" t="Include" />
           </e>
         </e>
         <e p="Plugins" t="Include">

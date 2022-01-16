@@ -8,6 +8,7 @@ namespace DefaultNamespace
         {
             var app = new App();
             app.Start();
+            Destroy(gameObject);
         }
     }
 }

@@ -13,11 +13,11 @@ namespace DefaultNamespace
             _assets = Resources.LoadAll<Asset>("");
         }
 
-        public T GetAsset<T>(string id) where T : MonoBehaviour
+        public T GetAsset<T>(string id) where T : Behaviour
         {
             var asset = _assets.Single(s => s.Id == id);
 
-            if (asset.Prefab is T prefab)
+            if (asset.Prefab.gameObject.TryGetComponent<T>(out var prefab))
                 return prefab;
 
             throw new Exception("Can't find asset with id: " + id);

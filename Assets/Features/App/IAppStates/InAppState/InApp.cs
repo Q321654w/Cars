@@ -7,7 +7,8 @@ namespace DefaultNamespace
         public event Action Ended;
 
         private readonly AppInfoContainer _appInfoContainer;
-        //private GameStateMachine _gameStateMachine;
+        private readonly GameStateMachine _gameStateMachine;
+        private MainMenuPresenter _presenter;
 
         public InApp(AppInfoContainer appInfoContainer)
         {
@@ -15,23 +16,20 @@ namespace DefaultNamespace
             var assetDataBase = new AssetDataBase();
 
             var windowFactory = new WindowFactory(assetDataBase);
-            var menuWindow = windowFactory.CreateWindow(WindowType.MainMenu);
-            var inMenu = new InMenu(menuWindow);
+            var inMenu = new InMenu();
             var loadGame = new LoadGame();
             var inGame = new InGame();
             var pause = new Pause();
             var endGame = new EndGame();
 
-            var _gameStateMachine = new GameStateMachine(inMenu);
+            _gameStateMachine = new GameStateMachine(inMenu);
             var loadGameTransition = new Transition(loadGame, _gameStateMachine);
-            var mainMenuPresenter = new MainMenuPresenter(menuWindow, loadGameTransition);
-
-            _gameStateMachine.Start();
+            _presenter = new MainMenuPresenter(windowFactory, inMenu, loadGameTransition);
         }
 
         public void Enter()
         {
-            throw new System.NotImplementedException();
+            _gameStateMachine.Start();
         }
 
         public void Exit()
