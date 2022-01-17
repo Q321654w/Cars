@@ -12,8 +12,7 @@ namespace Features.Cars.Engines
         private readonly Wheel[] _tractionWheels;
         private readonly Wheel[] _rotateWheels;
         private readonly EngineStats _stats;
-
-        public Wheel[] RotateWheels => _rotateWheels;
+        
         private float _speed;
 
         public Engine(EngineStats stats, PIDRegulator rotateRegulator, IEnumerable<Wheel> moveWheels, IEnumerable<Wheel> rotateWheels)

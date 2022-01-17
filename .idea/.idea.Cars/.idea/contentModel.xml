@@ -43,8 +43,9 @@
             <e p="Settings.cs" t="Include" />
           </e>
           <e p="AssetDataBase" t="Include">
-            <e p="Asset.cs" t="Include" />
             <e p="AssetDataBase.cs" t="Include" />
+            <e p="AssetMapper.cs" t="Include" />
+            <e p="ObjectIdPair.cs" t="Include" />
           </e>
           <e p="Cars" t="Include">
             <e p="Car.cs" t="Include" />
@@ -97,7 +98,6 @@
             </e>
             <e p="Player.cs" t="Include" />
           </e>
-          <e p="GameInstaller.cs" t="Include" />
           <e p="GameUpdate" t="Include">
             <e p="GameUpdates.cs" t="Include" />
             <e p="IGameUpdate.cs" t="Include" />

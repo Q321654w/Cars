@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -7,18 +6,20 @@ namespace DefaultNamespace
 {
     public class AssetDataBase
     {
-        private readonly Asset[] _assets;
+        private readonly AssetMapper _assetMapper;
+        
+        private const string PATH = "AssetMapper";
 
         public AssetDataBase()
         {
-            _assets = Resources.LoadAll<Asset>("");
+            _assetMapper = Resources.Load<AssetMapper>(PATH);
         }
 
         public T GetAsset<T>(string id) where T : Object
         {
-            var asset = _assets.Single(s => s.Id == id);
+            var asset = _assetMapper.GetAsset(id);
 
-            switch (asset.Prefab)
+            switch (asset)
             {
                 case T prefab:
                     return prefab;

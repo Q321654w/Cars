@@ -29,7 +29,7 @@ namespace Features.Cars
 
             foreach (var marker in instance.WheelMarkers)
             {
-                var wheel = _wheelFactory.Create(marker.Id, marker.transform, marker.IsRightWheel);
+                var wheel = _wheelFactory.Create(marker);
 
                 if (marker.DoesTractionWork)
                     moveWheels.Add(wheel);

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Features;
 using UnityEngine;
 
 namespace DefaultNamespace.Features
@@ -8,18 +9,18 @@ namespace DefaultNamespace.Features
     {
         [SerializeField] private WheelConfig[] _configs;
 
-        public Wheel Create(int id, Transform parent, bool isRight)
+        public Wheel Create(WheelMarker marker)
         {
-            var config = _configs.Single(s => s.Id == id);
-            
-            var colliderInstance = Instantiate(config.ColliderPrefab, parent);
-            
-            var wheelPrefab = config.GetWheelPrefab(isRight);
-            var instance = Instantiate(wheelPrefab, parent);
-            
+            var config = _configs.Single(s => s.Id == marker.Id);
+
+            var colliderInstance = Instantiate(config.ColliderPrefab, marker.transform);
+
+            var wheelPrefab = config.GetWheelPrefab(marker.IsRightWheel);
+            var instance = Instantiate(wheelPrefab, marker.transform);
+
             var wheelMeshSynchronizer = new WheelMeshSynchronizer(colliderInstance, instance.transform);
-            instance.Initialize(wheelMeshSynchronizer);
-            
+            instance.Initialize(wheelMeshSynchronizer, marker.IsRotate, marker.DoesTractionWork);
+
             return instance;
         }
     }

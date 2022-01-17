@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3dd190f36c4bac8facea8f85acc769, type: 3}
+  m_Name: AssetMapper
+  m_EditorClassIdentifier: 
+  _pairs:
+  - _key: Canvas
+    _value: {fileID: 6913881585543114596, guid: 4afdc86c4a1efb541afc238838dcc66e, type: 3}
+  - _key: MainMenu
+    _value: {fileID: 5869838876802669995, guid: b9f0e1af827c98140805f5b4bdf73b1b, type: 3}
+  - _key: PlayerDriverFactory
+    _value: {fileID: 11400000, guid: 9d8c3ff946be4e46b489e9a731a36c42, type: 2}
+  - _key: CarFactory
+    _value: {fileID: 11400000, guid: dbc68b6d76c57c4408e1bd852b28e805, type: 2}
+  - _key: GameUpdates
+    _value: {fileID: 4272384786213348495, guid: f663842966dfa3540b3624416f9c11d1, type: 3}
+  - _key: LevelConfigView
+    _value: {fileID: 5447554868707226963, guid: 592a703412c140d4992e0b93d1d34154, type: 3}
+  - _key: InSelectingLevelView
+    _value: {fileID: 7558948882728504392, guid: 94c22e2d7714a18409cd2d57ad1dfda9, type: 3}
+  - _key: InGameView
+    _value: {fileID: 4261140563874209186, guid: d63101192d9d8744e8ab7c173216754b, type: 3}
+  - _key: LoadGameView
+    _value: {fileID: 197208832952131215, guid: 907ead104e203494f85b2bef11bdd442, type: 3}
+  - _key: AllConfigs
+    _value: {fileID: 11400000, guid: 57a0c8a719fde104eadb8954bd68d088, type: 2}

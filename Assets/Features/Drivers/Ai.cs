@@ -1,4 +1,5 @@
-﻿using DefaultNamespace;
+﻿using System.Linq;
+using DefaultNamespace;
 using DefaultNamespace.Features;
 using Features.Cars;
 using PathCreation;
@@ -19,7 +20,7 @@ namespace Features
         {
             _path = path;
             _threshold = threshold;
-            _wheel = Car.RotateWheels[0];
+            _wheel = Car.Wheels.First(s => s.IsRotate);
         }
 
         protected override float GetXDirection()

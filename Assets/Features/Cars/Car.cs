@@ -17,7 +17,7 @@ namespace Features.Cars
         private Engine _engine;
         private Wheel[] _wheels;
 
-        public Wheel[] RotateWheels => _engine.RotateWheels;
+        public Wheel[] Wheels => _wheels;
 
         public void Initialize(Engine engine, IEnumerable<Wheel> wheels)
         {

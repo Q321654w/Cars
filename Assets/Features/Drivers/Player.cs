@@ -1,4 +1,5 @@
-﻿using DefaultNamespace.Features;
+﻿using System.Linq;
+using DefaultNamespace.Features;
 using Features.Cars;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace Features
         
         public Player(Car car) : base(car)
         {
-            _wheel = Car.RotateWheels[0];
+            _wheel = Car.Wheels.First(s => s.IsRotate);
         }
 
         protected override float GetXDirection()

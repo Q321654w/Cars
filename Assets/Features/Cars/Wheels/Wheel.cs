@@ -8,10 +8,18 @@ namespace DefaultNamespace.Features
         [SerializeField] private float _maxRotationAngle;
         private WheelMeshSynchronizer _meshSynchronizer;
 
-        public float Angle => _meshSynchronizer.WheelCollider.steerAngle;
+        private bool _doesTractionWork;
+        private bool _isRotate;
 
-        public void Initialize(WheelMeshSynchronizer wheelMeshSynchronizer)
+        public float Angle => _meshSynchronizer.WheelCollider.steerAngle;
+        
+        public bool IsRotate => _isRotate;
+        public bool DoesTractionWork => _doesTractionWork;
+
+        public void Initialize(WheelMeshSynchronizer wheelMeshSynchronizer, bool isRotate, bool doesTractionWork)
         {
+            _doesTractionWork = doesTractionWork;
+            _isRotate = isRotate;
             _meshSynchronizer = wheelMeshSynchronizer;
         }
 
