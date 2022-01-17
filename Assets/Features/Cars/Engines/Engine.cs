@@ -9,7 +9,7 @@ namespace Features.Cars.Engines
     public class Engine
     {
         private readonly PIDRegulator _rotateRegulator;
-        private readonly Wheel[] _moveWheels;
+        private readonly Wheel[] _tractionWheels;
         private readonly Wheel[] _rotateWheels;
         private readonly EngineStats _stats;
 
@@ -20,7 +20,7 @@ namespace Features.Cars.Engines
         {
             _stats = stats;
             _rotateRegulator = rotateRegulator;
-            _moveWheels = moveWheels.ToArray();
+            _tractionWheels = moveWheels.ToArray();
             _rotateWheels = rotateWheels.ToArray();
         }
 
@@ -41,7 +41,7 @@ namespace Features.Cars.Engines
             var force = _speed;
             var smoothedForce = force * deltaTime;
             
-            foreach (var wheel in _moveWheels)
+            foreach (var wheel in _tractionWheels)
             {
                 wheel.SetTorque(smoothedForce);
             }
@@ -59,7 +59,7 @@ namespace Features.Cars.Engines
 
         public void Brake()
         {
-            foreach (var wheel in _moveWheels)
+            foreach (var wheel in _tractionWheels)
             {
                 wheel.SetBrake(_speed);
             }

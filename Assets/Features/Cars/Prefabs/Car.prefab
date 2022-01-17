@@ -46,7 +46,7 @@ MonoBehaviour:
   Color: {r: 0, g: 0, b: 0, a: 1}
   Size: {x: 0.1, y: 0.1, z: 0.1}
   _isRotate: 1
-  _isMove: 1
+  _doesTractionWork: 1
   _id: 0
   _isRightWheel: 1
 --- !u!1 &4018595930655300630
@@ -95,7 +95,7 @@ MonoBehaviour:
   Color: {r: 0, g: 0, b: 0, a: 1}
   Size: {x: 0.1, y: 0.1, z: 0.1}
   _isRotate: 1
-  _isMove: 1
+  _doesTractionWork: 1
   _id: 0
   _isRightWheel: 0
 --- !u!1 &4304007862672683161
@@ -284,7 +284,7 @@ MonoBehaviour:
   Color: {r: 0, g: 0, b: 0, a: 1}
   Size: {x: 0.1, y: 0.1, z: 0.1}
   _isRotate: 0
-  _isMove: 1
+  _doesTractionWork: 0
   _id: 0
   _isRightWheel: 0
 --- !u!1 &8004336289497065521
@@ -333,6 +333,6 @@ MonoBehaviour:
   Color: {r: 0, g: 0, b: 0, a: 1}
   Size: {x: 0.1, y: 0.1, z: 0.1}
   _isRotate: 0
-  _isMove: 1
+  _doesTractionWork: 0
   _id: 0
   _isRightWheel: 1

@@ -15,12 +15,16 @@ namespace DefaultNamespace
         
         public void Enter()
         {
-            _appInfoContainer.GameInfoContainer.AssetDataBase = new AssetDataBase();
+            var assetDataBase = new AssetDataBase();
+            _appInfoContainer.AssetDataBase = assetDataBase;
+            _appInfoContainer.GameInfoContainer.Treshold = 10F;
+            _appInfoContainer.GameInfoContainer.LevelConfigs = assetDataBase.GetAsset<LevelConfigs>(Constants.LEVEL_CONFIGS).AllConfigs;
+            Ended?.Invoke();
         }
 
         public void Exit()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

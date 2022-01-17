@@ -31,7 +31,7 @@ namespace Features.Cars
             {
                 var wheel = _wheelFactory.Create(marker.Id, marker.transform, marker.IsRightWheel);
 
-                if (marker.IsMove)
+                if (marker.DoesTractionWork)
                     moveWheels.Add(wheel);
 
                 if (marker.IsRotate)

@@ -33,7 +33,7 @@ namespace Features.GameUpdate
 
             for (var i = 0; i < _updates.Count; i++)
             {
-                _updates[i].GameUpdate(Time.deltaTime);
+                _updates[i].GameUpdate(Time.fixedDeltaTime);
             }
         }
 

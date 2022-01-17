@@ -5,12 +5,12 @@ namespace Features
     public class WheelMarker : Marker
     {
         [SerializeField] private bool _isRotate;
-        [SerializeField] private bool _isMove;
+        [SerializeField] private bool _doesTractionWork;
         [SerializeField] private int _id;
         [SerializeField] private bool _isRightWheel;
 
         public bool IsRotate => _isRotate;
-        public bool IsMove => _isMove;
+        public bool DoesTractionWork => _doesTractionWork;
         public int Id => _id;
         public bool IsRightWheel => _isRightWheel;
 

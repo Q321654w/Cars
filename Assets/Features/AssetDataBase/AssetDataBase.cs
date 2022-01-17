@@ -23,9 +23,13 @@ namespace DefaultNamespace
                 case T prefab:
                     return prefab;
                 
-                case Component behaviour:
-                    behaviour.gameObject.TryGetComponent<T>(out var behaviorPrefab);
-                    return behaviorPrefab;
+                case Behaviour behaviour:
+                    behaviour.gameObject.TryGetComponent<T>(out var behaviourPrefab);
+                    return behaviourPrefab;
+
+                case GameObject gameObject:
+                    gameObject.gameObject.TryGetComponent<T>(out var gameObjectPrefab);
+                    return gameObjectPrefab;
                 
                 default:
                     throw new Exception("Can't find asset with id: " + id);

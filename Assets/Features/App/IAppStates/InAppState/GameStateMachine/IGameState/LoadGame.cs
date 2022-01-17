@@ -9,21 +9,24 @@ namespace DefaultNamespace
 {
     public class LoadGame : IGameState, ILevelProvider, IGameUpdatesProvider
     {
-        public event Action Entered;
-        public event Action Ended;
-
         public event Action<GameUpdates> Instanced;
         public event Action<Level> Loaded;
 
-        private readonly GameInfoContainer _gameInfo;
+        private readonly AppInfoContainer _appInfo;
         private readonly AssetDataBase _assetDataBase;
+        private readonly LoadGameView _view;
+        private readonly IStateSwitcher _stateSwitcher;
         private LevelConfig _config;
 
-        public LoadGame(ILevelConfigProvider levelConfigProvider, GameInfoContainer gameInfo, AssetDataBase assetDataBase)
+        public LoadGame(WindowFactory windowFactory, ILevelConfigProvider levelConfigProvider, AppInfoContainer appInfo,
+            IStateSwitcher stateSwitcher)
         {
+            _appInfo = appInfo;
+            _stateSwitcher = stateSwitcher;
+            _assetDataBase = appInfo.AssetDataBase;
+            
+            _view = windowFactory.CreateLoadGameView();
             levelConfigProvider.ConfigSelected += OnConfigSelected;
-            _gameInfo = gameInfo;
-            _assetDataBase = assetDataBase;
         }
 
         private void OnConfigSelected(LevelConfig config)
@@ -33,8 +36,8 @@ namespace DefaultNamespace
 
         public void Enter()
         {
-            Entered?.Invoke();
-
+            _view.Show();
+            
             var playerFactory = _assetDataBase.GetAsset<PlayerDriverFactory>(Constants.PLAYER_DRIVER_FACTORY_ID);
             var carFactory = _assetDataBase.GetAsset<CarFactory>(Constants.CAR_FACTORY_ID);
 
@@ -42,7 +45,7 @@ namespace DefaultNamespace
             var driverFactories = new IDriverFactory[]
             {
                 playerFactory,
-                new AiDriverFactory(_gameInfo.Treshold, mapBuilder),
+                new AiDriverFactory(_appInfo.GameInfoContainer.Treshold, mapBuilder),
             };
             var driverFactory = new DriverFactoryFacade(driverFactories);
             var playerBuilder = new PlayerBuilder(playerFactory, carFactory, _config.PlayerConfig);
@@ -55,11 +58,13 @@ namespace DefaultNamespace
             var gameUpdatesPrefab = _assetDataBase.GetAsset<GameUpdates>(Constants.GAME_UPDATES_ID);
             var gameUpdates = Object.Instantiate(gameUpdatesPrefab);
             Instanced?.Invoke(gameUpdates);
+            
+            _stateSwitcher.SwitchState<InGame>();
         }
 
         public void Exit()
         {
-            Ended?.Invoke();
+            _view.Hide();
         }
     }
 }

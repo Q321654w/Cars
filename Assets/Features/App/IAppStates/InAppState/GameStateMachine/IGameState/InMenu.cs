@@ -1,20 +1,30 @@
-﻿using System;
-
-namespace DefaultNamespace
+﻿namespace DefaultNamespace
 {
     public class InMenu : IGameState
     {
-        public event Action Entered;
-        public event Action Ended;
+        private readonly IStateSwitcher _stateSwitcher;
+        private readonly MainMenuView _mainMenuView;
+
+        public InMenu(WindowFactory windowFactory, IStateSwitcher stateSwitcher)
+        {
+            _stateSwitcher = stateSwitcher;
+            _mainMenuView = windowFactory.CreateMainMenu();
+            _mainMenuView.StartButton.Pressed += OnStartButtonPressed;
+        }
+
+        private void OnStartButtonPressed()
+        {
+            _stateSwitcher.SwitchState<InSelectingLevel>();
+        }
 
         public void Enter()
         {
-            Entered?.Invoke();
+            _mainMenuView.Show();
         }
 
         public void Exit()
         {
-            Ended?.Invoke();
+            _mainMenuView.Hide();
         }
     }
 }

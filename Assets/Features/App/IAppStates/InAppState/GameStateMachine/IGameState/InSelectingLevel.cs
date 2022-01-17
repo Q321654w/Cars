@@ -6,21 +6,38 @@ namespace DefaultNamespace
     public class InSelectingLevel : IGameState, ILevelConfigProvider
     {
         public event Action<LevelConfig> ConfigSelected;
+
+        private readonly IStateSwitcher _stateSwitcher;
+        private readonly InSelectingLevelView _view;
+
         private LevelConfig _levelConfig;
 
-        public void SelectLevel(LevelConfig config)
+        public InSelectingLevel(WindowFactory windowFactory, AssetDataBase assetDataBase, IStateSwitcher stateSwitcher)
+        {
+            _view = windowFactory.CreateSelectingView();
+
+            var levelConfigs = assetDataBase.GetAsset<LevelConfigs>(Constants.LEVEL_CONFIGS);
+            _view.Initialize(levelConfigs.AllConfigs, assetDataBase);
+            _view.ConfigSelected += OnConfigSelected;
+
+            _stateSwitcher = stateSwitcher;
+        }
+
+        private void OnConfigSelected(LevelConfig config)
         {
             _levelConfig = config;
+            ConfigSelected?.Invoke(_levelConfig);
+            _stateSwitcher.SwitchState<LoadGame>();
         }
 
         public void Enter()
         {
-            
+            _view.Show();
         }
 
         public void Exit()
         {
-            ConfigSelected?.Invoke(_levelConfig);
+            _view.Hide();
         }
     }
 }

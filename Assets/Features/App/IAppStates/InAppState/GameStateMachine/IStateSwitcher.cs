@@ -2,6 +2,6 @@
 {
     public interface IStateSwitcher
     {
-        void SwitchState(IGameState state);
+        void SwitchState<T>() where T : IGameState;
     }
 }

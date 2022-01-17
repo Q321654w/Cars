@@ -16,3 +16,4 @@ MonoBehaviour:
   - Ai
   _mapPrefab: {fileID: 1512077878525524957, guid: f5423caab51d4aa6b72f55826daa5621, type: 3}
   _loops: 1
+  _playerConfig: {fileID: 11400000, guid: 51001e3dd666e684d8df7ad6d58d2ee7, type: 2}

@@ -30,9 +30,9 @@
                     <e p="InGame.cs" t="Include" />
                     <e p="InMenu.cs" t="Include" />
                     <e p="InSelectingLevel.cs" t="Include" />
+                    <e p="IScoreBoardProvider.cs" t="Include" />
                     <e p="LoadGame.cs" t="Include" />
                     <e p="Pause.cs" t="Include" />
-                    <e p="Transition.cs" t="Include" />
                   </e>
                   <e p="IStateSwitcher.cs" t="Include" />
                 </e>
@@ -106,6 +106,7 @@
           <e p="Levels" t="Include">
             <e p="Level.cs" t="Include" />
             <e p="LevelConfig.cs" t="Include" />
+            <e p="LevelConfigs.cs" t="Include" />
             <e p="LevelLoader.cs" t="Include" />
           </e>
           <e p="Maps" t="Include">
@@ -115,7 +116,11 @@
           </e>
           <e p="PlayerBuilder.cs" t="Include" />
           <e p="UI" t="Include">
-            <e p="MainMenuPresenter.cs" t="Include" />
+            <e p="EndGameView.cs" t="Include" />
+            <e p="InGameView.cs" t="Include" />
+            <e p="InSelectingLevelView.cs" t="Include" />
+            <e p="LevelConfigView.cs" t="Include" />
+            <e p="LoadGameView.cs" t="Include" />
             <e p="MainMenuView.cs" t="Include" />
             <e p="WindowFactory.cs" t="Include" />
           </e>
