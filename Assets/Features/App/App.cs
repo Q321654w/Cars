@@ -10,7 +10,6 @@ namespace DefaultNamespace
         public App()
         {
             _container = new AppInfoContainer();
-            _container.GameInfoContainer = new GameInfoContainer(){Treshold = 10F};
         }
 
         public void Start() =>

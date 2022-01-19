@@ -33,7 +33,7 @@ namespace DefaultNamespace
 
         public InGameView CreateInGameView()
         {
-            var prefab = _assetDataBase.GetAsset<InGameView>(Constants.IN_GAME_VIEW);
+            var prefab = _assetDataBase.GetAsset<InGameView>(Constants.IN_GAME_VIEW_ID);
             var instance = Object.Instantiate(prefab, _canvas.transform);
             instance.gameObject.SetActive(false);
             return instance;
@@ -41,7 +41,7 @@ namespace DefaultNamespace
 
         public LoadGameView CreateLoadGameView()
         {
-            var prefab = _assetDataBase.GetAsset<LoadGameView>(Constants.LOAD_GAME_VIEW);
+            var prefab = _assetDataBase.GetAsset<LoadGameView>(Constants.LOAD_GAME_VIEW_ID);
             var instance = Object.Instantiate(prefab, _canvas.transform);
             instance.gameObject.SetActive(false);
             return instance;

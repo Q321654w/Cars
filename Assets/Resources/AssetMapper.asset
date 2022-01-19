@@ -33,3 +33,5 @@ MonoBehaviour:
     _value: {fileID: 197208832952131215, guid: 907ead104e203494f85b2bef11bdd442, type: 3}
   - _key: AllConfigs
     _value: {fileID: 11400000, guid: 57a0c8a719fde104eadb8954bd68d088, type: 2}
+  - _key: Camera
+    _value: {fileID: 5685435694318593983, guid: 20b182b2e1368d94e8484c4427008d25, type: 3}

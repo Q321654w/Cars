@@ -1,5 +1,4 @@
 ﻿using System;
-using DefaultNamespace.Features;
 using Features;
 using Features.Cars;
 using Features.GameUpdate;
@@ -24,7 +23,7 @@ namespace DefaultNamespace
             _appInfo = appInfo;
             _stateSwitcher = stateSwitcher;
             _assetDataBase = appInfo.AssetDataBase;
-            
+
             _view = windowFactory.CreateLoadGameView();
             levelConfigProvider.ConfigSelected += OnConfigSelected;
         }
@@ -37,7 +36,7 @@ namespace DefaultNamespace
         public void Enter()
         {
             _view.Show();
-            
+
             var playerFactory = _assetDataBase.GetAsset<PlayerDriverFactory>(Constants.PLAYER_DRIVER_FACTORY_ID);
             var carFactory = _assetDataBase.GetAsset<CarFactory>(Constants.CAR_FACTORY_ID);
 
@@ -48,9 +47,9 @@ namespace DefaultNamespace
                 new AiDriverFactory(_appInfo.GameInfoContainer.Treshold, mapBuilder),
             };
             var driverFactory = new DriverFactoryFacade(driverFactories);
-            var playerBuilder = new PlayerBuilder(playerFactory, carFactory, _config.PlayerConfig);
 
-            var levelLoader = new LevelLoader(mapBuilder, carFactory, driverFactory, playerBuilder);
+            var camera = _appInfo.GameInfoContainer.Camera;
+            var levelLoader = new LevelLoader(mapBuilder, carFactory, driverFactory, _config.PlayerConfig, camera);
 
             var level = levelLoader.Load(_config);
             Loaded?.Invoke(level);
@@ -58,7 +57,7 @@ namespace DefaultNamespace
             var gameUpdatesPrefab = _assetDataBase.GetAsset<GameUpdates>(Constants.GAME_UPDATES_ID);
             var gameUpdates = Object.Instantiate(gameUpdatesPrefab);
             Instanced?.Invoke(gameUpdates);
-            
+
             _stateSwitcher.SwitchState<InGame>();
         }
 

@@ -76,6 +76,7 @@
             </e>
           </e>
           <e p="Common" t="Include">
+            <e p="Constants.cs" t="Include" />
             <e p="CustomButton.cs" t="Include" />
             <e p="Markers" t="Include">
               <e p="BotCarMarker.cs" t="Include" />
@@ -85,7 +86,6 @@
             </e>
             <e p="PIDRegulator.cs" t="Include" />
           </e>
-          <e p="Constants.cs" t="Include" />
           <e p="DebugDrawer.cs" t="Include" />
           <e p="Drivers" t="Include">
             <e p="Ai.cs" t="Include" />
@@ -102,7 +102,6 @@
             <e p="GameUpdates.cs" t="Include" />
             <e p="IGameUpdate.cs" t="Include" />
           </e>
-          <e p="IWindow.cs" t="Include" />
           <e p="Levels" t="Include">
             <e p="Level.cs" t="Include" />
             <e p="LevelConfig.cs" t="Include" />
@@ -114,11 +113,11 @@
             <e p="Map.cs" t="Include" />
             <e p="MapBuilder.cs" t="Include" />
           </e>
-          <e p="PlayerBuilder.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="EndGameView.cs" t="Include" />
             <e p="InGameView.cs" t="Include" />
             <e p="InSelectingLevelView.cs" t="Include" />
+            <e p="IWindow.cs" t="Include" />
             <e p="LevelConfigView.cs" t="Include" />
             <e p="LoadGameView.cs" t="Include" />
             <e p="MainMenuView.cs" t="Include" />

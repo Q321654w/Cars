@@ -1,4 +1,6 @@
 ﻿using System;
+using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace DefaultNamespace
 {
@@ -17,8 +19,12 @@ namespace DefaultNamespace
         {
             var assetDataBase = new AssetDataBase();
             _appInfoContainer.AssetDataBase = assetDataBase;
-            _appInfoContainer.GameInfoContainer.Treshold = 10F;
-            _appInfoContainer.GameInfoContainer.LevelConfigs = assetDataBase.GetAsset<LevelConfigs>(Constants.LEVEL_CONFIGS).AllConfigs;
+            _appInfoContainer.GameInfoContainer = new GameInfoContainer
+            {
+                Treshold = 10F, LevelConfigs = assetDataBase.GetAsset<LevelConfigs>(Constants.LEVEL_CONFIGS_ID).AllConfigs
+            };
+            var cameraPrefab = assetDataBase.GetAsset<Camera>(Constants.CAMERA_ID);
+            _appInfoContainer.GameInfoContainer.Camera = Object.Instantiate(cameraPrefab);
             Ended?.Invoke();
         }
 

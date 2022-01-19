@@ -16,7 +16,7 @@ namespace DefaultNamespace
         {
             _view = windowFactory.CreateSelectingView();
 
-            var levelConfigs = assetDataBase.GetAsset<LevelConfigs>(Constants.LEVEL_CONFIGS);
+            var levelConfigs = assetDataBase.GetAsset<LevelConfigs>(Constants.LEVEL_CONFIGS_ID);
             _view.Initialize(levelConfigs.AllConfigs, assetDataBase);
             _view.ConfigSelected += OnConfigSelected;
 
