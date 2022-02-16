@@ -27,25 +27,47 @@ namespace Features
         {
             var transform = Car.transform;
             var position = transform.position;
-            var distanceAlongPath = _path.GetClosestDistanceAlongPath(position);
-            var point = _path.GetPointAtDistance(distanceAlongPath);
-            DebugDrawer.DrawCross(point, 3, Color.red, Time.deltaTime);
 
-            var distance = Vector3.Distance(position, point);
-            var clampedDistance = Mathf.Clamp(distance, 0, MAX_DISTANCE);
-            distanceAlongPath += clampedDistance + _threshold;
-            point = _path.GetPointAtDistance(distanceAlongPath);
+            var pathDirection = CalculatePathDirection(position);
 
-            var pathDirection = (point - position).normalized;
-            DebugDrawer.DrawCross(point, 3, Color.yellow, Time.deltaTime);
+            var globalDirection = CalculateGlobalDirection(transform);
 
-            var steerAngleInRadians = _wheel.Angle * Mathf.Deg2Rad;
-            var localDirection = new Vector3(Mathf.Sin(steerAngleInRadians), 0, Mathf.Cos(steerAngleInRadians));
-            var globalDirection = transform.TransformDirection(localDirection);
             Debug.DrawRay(transform.position + Vector3.up, globalDirection, Color.black, Time.deltaTime);
             Debug.DrawRay(transform.position + Vector3.up, pathDirection, Color.red, Time.deltaTime);
+
             var angle = Vector3.SignedAngle(globalDirection, pathDirection, transform.up);
             return angle;
+        }
+
+        private Vector3 CalculatePathDirection(Vector3 position)
+        {
+            var distanceAlongPath = CalculateDistanceAlongPath(position);
+            var point = _path.GetPointAtDistance(distanceAlongPath);
+            DebugDrawer.DrawCross(point,2,Color.red, Time.deltaTime);
+            
+            return (point - position).normalized;
+        }
+
+        private float CalculateDistanceAlongPath(Vector3 position)
+        {
+            var distanceAlongPath = _path.GetClosestDistanceAlongPath(position);
+            
+            var point = _path.GetPointAtDistance(distanceAlongPath);
+            DebugDrawer.DrawCross(point,2,Color.yellow, Time.deltaTime);
+            
+            var distance = Vector3.Distance(position, point);
+            var clampedDistance = Mathf.Clamp(distance, 0, MAX_DISTANCE); 
+            distanceAlongPath += clampedDistance + _threshold;
+
+            return distanceAlongPath;
+        }
+
+        private Vector3 CalculateGlobalDirection(Transform transform)
+        {
+            var steerAngleInRadians = _wheel.Angle * Mathf.Deg2Rad;
+            var localDirection = new Vector3(Mathf.Sin(steerAngleInRadians), 0, Mathf.Cos(steerAngleInRadians));
+            
+            return transform.TransformDirection(localDirection);
         }
 
         protected override float GetZDirection()

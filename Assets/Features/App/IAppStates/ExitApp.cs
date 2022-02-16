@@ -19,10 +19,5 @@ namespace DefaultNamespace
         {
             _quit.Invoke();
         }
-
-        public void Exit()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

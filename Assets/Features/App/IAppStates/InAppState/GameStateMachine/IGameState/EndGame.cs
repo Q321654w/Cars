@@ -29,10 +29,5 @@ namespace DefaultNamespace
         {
             _level.CleanUp();
         }
-
-        public void Exit()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

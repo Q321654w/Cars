@@ -5,7 +5,7 @@ namespace Features
 {
     public class DriverFactoryFacade
     {
-        private IDriverFactory[] _driverFactories;
+        private readonly IDriverFactory[] _driverFactories;
 
         public DriverFactoryFacade(IDriverFactory[] driverFactories)
         {

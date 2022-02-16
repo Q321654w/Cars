@@ -28,7 +28,7 @@ namespace Features
 
             foreach (var driver in _drivers)
             {
-                _loops.Add(driver.ControledCar, 0);
+                _loops.Add(driver.ControlledCar, 0);
             }
 
             _map.Finish.Reached += OnFinishReached;
@@ -48,8 +48,10 @@ namespace Features
         private void AddToScoreBoard(Car car)
         {
             _scoreBoard.Enqueue(car);
+            
             car.Brake();
-            var driver = _drivers.Find(s => s.ControledCar == car);
+            var driver = _drivers.Find(s => s.ControlledCar == car);
+            
             _drivers.Remove(driver);
         }
 
@@ -63,7 +65,8 @@ namespace Features
         {
             foreach (var driver in _drivers)
             {
-                var car = driver.ControledCar;
+                var car = driver.ControlledCar;
+                
                 driver.GameUpdate(deltaTime);
                 car.GameUpdate(deltaTime);
             }
@@ -71,7 +74,7 @@ namespace Features
 
         public void CleanUp()
         {
-           
+            _map.Finish.Reached -= OnFinishReached;
         }
     }
 }

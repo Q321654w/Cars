@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -12,15 +13,22 @@ namespace DefaultNamespace
             _container = new AppInfoContainer();
         }
 
-        public void Start() =>
-            _chain = new ExecuteChain()
-                .Append(new LoadApp(_container))
-                .Append(new InApp(_container))
-                .Append(new ExitApp(_container, Quit))
-                .Run();
-        
+        public void Start()
+        {
+            var queue = new Queue<IAppState>();
+            queue.Enqueue(new LoadApp(_container));
+            queue.Enqueue(new InApp(_container));
+            queue.Enqueue(new ExitApp(_container, Quit));
 
-        private void Quit() =>
+            _chain = new ExecuteChain(queue);
+
+            _chain.Run();
+        }
+
+
+        private void Quit()
+        {
             Application.Quit();
+        }
     }
 }

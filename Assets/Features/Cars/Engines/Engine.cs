@@ -9,18 +9,18 @@ namespace Features.Cars.Engines
     public class Engine
     {
         private readonly PIDRegulator _rotateRegulator;
-        private readonly Wheel[] _tractionWheels;
-        private readonly Wheel[] _rotateWheels;
+        private readonly IEnumerable<Wheel> _tractionWheels;
+        private readonly IEnumerable<Wheel> _rotateWheels;
         private readonly EngineStats _stats;
-        
+
         private float _speed;
 
-        public Engine(EngineStats stats, PIDRegulator rotateRegulator, IEnumerable<Wheel> moveWheels, IEnumerable<Wheel> rotateWheels)
+        public Engine(EngineStats stats, PIDRegulator rotateRegulator, IEnumerable<Wheel> wheels)
         {
             _stats = stats;
             _rotateRegulator = rotateRegulator;
-            _tractionWheels = moveWheels.ToArray();
-            _rotateWheels = rotateWheels.ToArray();
+            _tractionWheels = wheels.Where(s => s.DoesTractionWork);
+            _rotateWheels = wheels.Where(s => s.IsRotate);
         }
 
         public void Accelerate()
@@ -39,14 +39,14 @@ namespace Features.Cars.Engines
         {
             var force = _speed;
             var smoothedForce = force * deltaTime;
-            
+
             foreach (var wheel in _tractionWheels)
             {
                 wheel.SetTorque(smoothedForce);
             }
         }
 
-        public void Rotate(float deltaTime, float deltaAngle)
+        public void Rotate(float deltaAngle)
         {
             var clampedAngle = Mathf.Clamp(deltaAngle, -_stats.TurningSpeed, _stats.TurningSpeed);
 

@@ -11,15 +11,15 @@ namespace Features.Cars.Engines
     {
         [SerializeField] private EngineConfig[] _configs;
 
-        public Engine Create(int id, IEnumerable<Wheel> rotateWheels, IEnumerable<Wheel> moveWheels)
+        public Engine Create(int id, IEnumerable<Wheel> wheels)
         {
             var config = _configs.Single(s => s.Id == id);
-            return new Engine(config.Stats, config.PidRegulator, moveWheels, rotateWheels);
+            return new Engine(config.Stats, config.PidRegulator, wheels);
         }
 
-        public Engine Create(EngineConfig config, IEnumerable<Wheel> rotateWheels, IEnumerable<Wheel> moveWheels)
+        public Engine Create(EngineConfig config, IEnumerable<Wheel> wheels)
         {
-            return new Engine(config.Stats, config.PidRegulator, moveWheels, rotateWheels);
+            return new Engine(config.Stats, config.PidRegulator, wheels);
         }
     }
 }

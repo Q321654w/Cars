@@ -6,7 +6,7 @@ namespace Features
     public abstract class Driver : IGameUpdate
     {
         protected readonly Car Car;
-        public Car ControledCar => Car;
+        public Car ControlledCar => Car;
         
         protected Driver(Car car)
         {
@@ -16,7 +16,7 @@ namespace Features
         public void GameUpdate(float deltaTime)
         {
             var xDirection = GetXDirection();
-            Car.Rotate(deltaTime, xDirection);
+            Car.Rotate(xDirection);
 
             var yDirection = GetZDirection();
 

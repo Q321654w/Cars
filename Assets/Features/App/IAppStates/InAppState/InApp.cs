@@ -21,9 +21,5 @@ namespace DefaultNamespace
             _gameStateMachine = new GameStateMachine(windowFactory, _appInfoContainer);
             _gameStateMachine.Start();
         }
-
-        public void Exit()
-        {
-        }
     }
 }

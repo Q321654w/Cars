@@ -59,10 +59,6 @@ namespace DefaultNamespace
             Instanced?.Invoke(gameUpdates);
 
             _stateSwitcher.SwitchState<InGame>();
-        }
-
-        public void Exit()
-        {
             _view.Hide();
         }
     }

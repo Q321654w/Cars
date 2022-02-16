@@ -31,16 +31,9 @@ namespace DefaultNamespace
 
         public void SwitchState<T>() where T : IGameState
         {
-            ExitFromState();
-
             _currentState = _states.Find(s => s is T);
 
             EnterInState();
-        }
-
-        private void ExitFromState()
-        {
-            _currentState.Exit();
         }
 
         private void EnterInState()

@@ -45,10 +45,5 @@ namespace DefaultNamespace
         {
             _stateSwitcher.SwitchState<EndGame>();
         }
-
-        public void Exit()
-        {
-            
-        }
     }
 }

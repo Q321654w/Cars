@@ -16,13 +16,5 @@ namespace Features.Maps
         public VertexPath VertexPath => _pathCreator.path;
         public Finish Finish => _finish;
         public PlayerCarMarker PlayerMarker => _playerMarker;
-
-        public void PlaceCar(Car car, int index)
-        {
-            var carTransform = car.transform;
-
-            carTransform.position = _botMarkers[index].transform.position;
-            carTransform.rotation = _botMarkers[index].transform.rotation;
-        }
     }
 }

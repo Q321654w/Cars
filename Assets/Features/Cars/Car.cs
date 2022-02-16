@@ -35,9 +35,9 @@ namespace Features.Cars
             _engine.Slowdown();
         }
 
-        public void Rotate(float deltaTime, float direction)
+        public void Rotate(float direction)
         {
-            _engine.Rotate(deltaTime, direction);
+            _engine.Rotate(direction);
         }
 
         public void GameUpdate(float deltaTime)

@@ -24,10 +24,12 @@ namespace DefaultNamespace
             _configs = new Dictionary<int, LevelConfig>();
 
             var buttonPrefab = _assetDataBase.GetAsset<LevelConfigView>(Constants.LEVEL_CONFIG_VIEW_ID);
+            
             for (int i = 0; i < levelConfigs.Length; i++)
             {
                 var view = Instantiate(buttonPrefab, transform);
                 view.Initialize(i);
+                
                 view.Selected += OnViewSelected;
                 _configs.Add(i, levelConfigs[i]);
             }

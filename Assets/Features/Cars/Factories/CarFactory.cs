@@ -24,25 +24,15 @@ namespace Features.Cars
         {
             var instance = Instantiate(config.CarPrefab);
 
-            var rotateWheels = new List<Wheel>();
-            var moveWheels = new List<Wheel>();
+            var wheels = new List<Wheel>();
 
             foreach (var marker in instance.WheelMarkers)
             {
                 var wheel = _wheelFactory.Create(marker);
-
-                if (marker.DoesTractionWork)
-                    moveWheels.Add(wheel);
-
-                if (marker.IsRotate)
-                    rotateWheels.Add(wheel);
+                wheels.Add(wheel);
             }
-
-            var wheels = new Wheel[rotateWheels.Count + moveWheels.Count];
-            rotateWheels.CopyTo(wheels, 0);
-            moveWheels.CopyTo(wheels, rotateWheels.Count);
-
-            var engine = _engineFactory.Create(config.EngineId, rotateWheels, moveWheels);
+            
+            var engine = _engineFactory.Create(config.EngineId, wheels);
             instance.Initialize(engine, wheels);
 
             return instance;

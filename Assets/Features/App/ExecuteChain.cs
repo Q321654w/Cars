@@ -7,21 +7,14 @@ namespace DefaultNamespace
         private readonly Queue<IAppState> _states;
         private IAppState _currentState;
 
-        public ExecuteChain()
+        public ExecuteChain(Queue<IAppState> states)
         {
-            _states = new Queue<IAppState>();
+            _states = states;
         }
 
-        public ExecuteChain Append(IAppState state)
-        {
-            _states.Enqueue(state);
-            return this;
-        }
-
-        public ExecuteChain Run()
+        public void Run()
         {
             EnterInState();
-            return this;
         }
 
         private void OnStateEnded()
@@ -40,7 +33,6 @@ namespace DefaultNamespace
         private void ExitFromState()
         {
             _currentState.Ended -= OnStateEnded;
-            _currentState.Exit();
         }
     }
 }

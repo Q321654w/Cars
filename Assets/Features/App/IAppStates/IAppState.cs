@@ -7,6 +7,5 @@ namespace DefaultNamespace
         event Action Ended;
         
         void Enter();
-        void Exit();
     }
 }

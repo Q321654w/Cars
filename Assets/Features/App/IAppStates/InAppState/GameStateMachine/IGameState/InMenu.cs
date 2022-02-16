@@ -15,16 +15,12 @@
         private void OnStartButtonPressed()
         {
             _stateSwitcher.SwitchState<InSelectingLevel>();
+            _mainMenuView.Hide();
         }
 
         public void Enter()
         {
             _mainMenuView.Show();
-        }
-
-        public void Exit()
-        {
-            _mainMenuView.Hide();
         }
     }
 }

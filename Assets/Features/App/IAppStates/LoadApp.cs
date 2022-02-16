@@ -27,10 +27,5 @@ namespace DefaultNamespace
             _appInfoContainer.GameInfoContainer.Camera = Object.Instantiate(cameraPrefab);
             Ended?.Invoke();
         }
-
-        public void Exit()
-        {
-            
-        }
     }
 }

@@ -28,16 +28,12 @@ namespace DefaultNamespace
             _levelConfig = config;
             ConfigSelected?.Invoke(_levelConfig);
             _stateSwitcher.SwitchState<LoadGame>();
+            _view.Hide();
         }
 
         public void Enter()
         {
             _view.Show();
-        }
-
-        public void Exit()
-        {
-            _view.Hide();
         }
     }
 }
